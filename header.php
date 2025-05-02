@@ -17,9 +17,10 @@
 	<!-- End Google Analytics opt-out snippet added by Site Kit -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com"> -->
+	<!-- <link rel="preconnect" href="https://cdn.jsdelivr.net/"> -->
 	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet">
+		href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" as="style">
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet">
 
