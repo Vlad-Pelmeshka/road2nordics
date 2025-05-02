@@ -1,0 +1,1 @@
+document.addEventListener("nfFormReady",function(e){var n=document.querySelector(".nf-field-element");n&&n.addEventListener("click",function(){console.log("Clicked after form load!")})});

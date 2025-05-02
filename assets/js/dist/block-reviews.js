@@ -1,0 +1,1 @@
+let lightbox=GLightbox({selector:".glightbox"});

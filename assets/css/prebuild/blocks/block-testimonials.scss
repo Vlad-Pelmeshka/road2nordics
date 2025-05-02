@@ -1,0 +1,94 @@
+@use "core/core";.block-testimonials {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+  background: radial-gradient(252.93% 141.42% at 0% 100.1%, #214EEB 0%, rgba(33, 78, 235, 0.00) 100%), linear-gradient(0deg, #C9CAFF 0%, #C9CAFF 100%), radial-gradient(122.14% 45.18% at 0% 100.1%, rgba(201, 202, 255, 0.60) 0%, rgba(201, 202, 255, 0.00) 100%), radial-gradient(96.03% 48.23% at 100% 0.1%, rgba(201, 202, 255, 0.50) 0%, rgba(201, 202, 255, 0.00) 100%), linear-gradient(0deg, #214EEB 0%, #214EEB 100%), #FFF;
+  @include core.media("<960px") {
+    padding: 64px 0;
+  }
+  @include core.media("<580px") {
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    color: #fff;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-gap: 16px;
+    margin-bottom: 16px;
+    @media (max-width: 1100px) {
+
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+    @media (max-width: 580px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__quote {
+    background: core.$c-brand-primary;
+    position: core.$font-primary;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 48px;
+    overflow: hidden;
+    width: 100%;
+    @media (max-width: 960px) {
+      padding: 32px;
+    }
+  }
+
+  &__quote-text {
+    color: #FFF;
+    font-family: core.$font-primary;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 90%;
+    @media (max-width: 960px) {
+      width: 100%;
+    }
+    @media (max-width: 580px) {
+      width: 100%;
+    }
+  }
+
+  &__quote-info {
+    padding-left: 32px;
+    position: relative;
+    width: 100%;
+    border-left: 1px solid core.$c-bg-tertiary;
+  }
+
+  &__quote-name {
+    color: #FFF;
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    position: relative;
+    width: 100%;
+  }
+
+  &__quote-position {
+    color: core.$c-bg-tertiary;
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    width: 100%;
+  }
+}

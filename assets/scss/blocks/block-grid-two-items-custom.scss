@@ -1,0 +1,136 @@
+.block-grid-two-items-custom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  width: 100%;
+
+  &__inner {
+    max-width: 1360px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: #1f283c;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+
+      font-size: 26px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    color: #60687B;
+    font-size: 16px;
+    position: relative;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 835px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    @media (max-width: 768px) {
+
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #e7eaef;
+    border-radius: 6px 6px 6px 6px;
+    overflow: hidden;
+  }
+
+  &__item-image {
+    position: relative;
+    height: 421px;
+    width: 100%;
+    @media (max-width: 960px) {
+
+      height: 228px;
+    }
+  }
+
+  &__item-content {
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__item-title {
+    font-family: $font-primary;
+    font-size: 22px;
+    line-height: 1.5em;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 700;
+    width: 100%;
+    color: #374052;
+    @media (max-width: 960px) {
+
+      font-size: 22px;
+    }
+  }
+
+  &__item-text {
+    text-align: left;
+    color: #60687B;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__item-price {
+    background: #F3F6FB;
+    padding-top: 2px;
+    padding-right: 12px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+    border-radius: 100px;
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    width: auto;
+
+  }
+
+  &__btn {
+    width: 100%;
+    display: flex;
+
+    svg {
+      margin-left: 12px;
+    }
+  }
+}

@@ -1,0 +1,295 @@
+@use "core/core";.listing-archive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--Pale-Gray, #F3F3F3);
+  position: relative;
+  padding-bottom: 80px;
+  width: 100%;
+  @include core.media('<770px') {
+    padding-bottom: 64px;
+  }
+  @include core.media('<580px') {
+    padding-bottom: 40px;
+  }
+
+  &__banner {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    min-height: 305px;
+    margin-top: 92px;
+    display: flex;
+    justify-content: center;
+    @include core.media('<770px') {
+      padding: 120px 0 64px;
+      margin-top: unset;
+    }
+    @include core.media('<580px') {
+      padding: 100px 0 40px;
+      min-height: 188px;
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 32px;
+      width: 100%;
+      @include core.media('<580px') {
+        margin-bottom: 16px;
+      }
+    }
+
+    p {
+      color: var(--White, #FFF);
+      text-align: center;
+
+      /* Body/body-medium */
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 24px */
+      width: 100%;
+    }
+  }
+
+  &__pse {
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    right: 0;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 16px;
+
+    width: 100%;
+    @include core.media('<770px') {
+      margin-top: 64px;
+    }
+    @include core.media('<580px') {
+      margin-top: 40px;
+    }
+
+    a {
+      color: var(--Royal-Blue, #214EEB);
+      text-align: center;
+      /* Link/Link-bold */
+      font-family: core.$font-primary;
+      font-size: var(--font-size-16, 16px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 16px */
+      width: auto;
+      box-sizing: border-box;
+      padding: 16px 24px;
+      border-radius: 8px;
+      border: var(--stroke-weight-2, 2px) solid var(--Royal-Blue, #214EEB);
+      margin-right: 16px;
+      margin-bottom: 16px;
+      transition: background-color .5s ease, opacity .5s ease;
+
+      &.active {
+        background: #214EEB;
+        color: #fff;
+      }
+
+      &:hover {
+        background: #214EEB;
+        color: #fff;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    width: 100%;
+
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    @include core.media('<960px') {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include core.media('<580px') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    border-radius: 20px;
+    background: var(--White, #FFF);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    h2 {
+      overflow: hidden;
+      color: var(--Black, #00011A);
+      text-overflow: ellipsis;
+      font-family: core.$font-primary;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 36px */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      align-self: stretch;
+      cursor: pointer;
+      @include core.media('<960px') {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 30px */
+      }
+    }
+  }
+
+  .thumbnail {
+    height: 280px;
+    position: relative;
+    max-height: 280px;
+  }
+
+  &__item-content {
+    box-sizing: border-box;
+    padding: 24px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__item-extra {
+    position: relative;
+    width: 100%;
+    padding-left: 16px;
+    margin-top: 24px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      left: 0;
+      top: 0;
+      background: #829DFF;
+    }
+  }
+
+  &__item-extra-in {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  .extra-label {
+    color: var(--Light-Gray, #84879D);
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  .extra-text {
+    color: var(--Gray, #414458);
+
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    position: relative;
+    margin-left: 5px;
+  }
+
+  &__item-cat-name {
+    position: relative;
+    width: 100%;
+    color: var(--Light-Gray, #84879D);
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  &__item-desc {
+    position: relative;
+    margin-top: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    align-self: stretch;
+    overflow: hidden;
+    color: var(--Gray, #414458);
+    text-overflow: ellipsis;
+
+    /* Body/body-regular */
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+  }
+
+  .pagination {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .page-numbers {
+    color: var(--Gray, #414458);
+    text-align: center;
+
+    /* Body/body-regular */
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    box-sizing: border-box;
+    padding: 16px;
+  }
+
+  .current.page-numbers {
+    color: var(--Royal-Blue, #214EEB);
+    text-align: center;
+
+    /* Body/body-bold */
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+  }
+
+  .next.page-numbers, .prev.page-numbers {
+    padding: 0;
+
+  }
+  div.page-numbers{
+    padding: 0;
+  }
+}

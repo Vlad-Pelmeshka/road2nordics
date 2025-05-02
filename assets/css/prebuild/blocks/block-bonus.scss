@@ -1,0 +1,39 @@
+@use "core/core";.block-bonus {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
+
+  &__content {
+    border-top: 1px solid #E4E6EC;
+    border-bottom: 1px solid #E4E6EC;
+    max-width: 1360px;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: core.$font-primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100%;
+    color: #60687B;
+
+  }
+  &__text{
+    font-family: core.$font-primary;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #1F283C;
+    width: 100%;
+    text-align: center;
+
+  }
+}

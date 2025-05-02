@@ -1,0 +1,120 @@
+@use "core/core";.block-image-text-left-right-custom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 80%, rgba(255, 240, 0, 0) 100%);
+
+  width: 100%;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+
+  &.right {
+    .block-image-text-left-right-custom__title {
+
+    }
+
+    .block-image-text-left-right-custom__text {
+
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-height: 560px;
+    width: 50%;
+    @media (max-width: 768px) {
+      width: 100%;
+      min-height: 375px;
+    }
+
+  }
+
+  > .img-cover {
+    object-fit: unset !important;
+  }
+
+  &__content {
+    position: relative;
+    padding: 0px 60px 0px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 50%;
+    @media (max-width: 1024px) {
+      padding: 80px 32px 80px 32px;
+    }
+
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &.white {
+      .block-image-text-left-right-custom__title {
+        color: #fff;
+      }
+
+      .block-image-text-left-right-custom__text {
+        color: #fff;
+      }
+    }
+  }
+
+  &__title {
+    font-family: core.$font-primary;
+    font-size: 34px;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f283c;
+    @media (max-width: 768px) {
+
+      font-size: 26px;
+    }
+
+  }
+
+  &__text {
+    color: #60687B;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+    width: auto;
+
+    ul li {
+      color: #60687B;
+      list-style: disc;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0px;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    img {
+      width: 32px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

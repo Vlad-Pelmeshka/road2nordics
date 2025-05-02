@@ -1,0 +1,33 @@
+@use "core/core";.block-journey {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
+
+  &__inner {
+    max-width: 1420px;
+  }
+
+  &__title {
+    font-family: core.$font-primary;
+    font-size: 52px;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    text-align: center;
+    color: #1f283c;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+&__content{
+  padding: 185px 0px 185px 0px;
+}
+  &__btn {
+    display: flex;
+    padding-top: 25px;
+    justify-content: center;
+    width: 100%;
+  }
+}

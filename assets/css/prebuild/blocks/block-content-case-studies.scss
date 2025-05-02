@@ -1,0 +1,340 @@
+@use "core/core";.single-acf-block {
+  position: relative;
+  display: flex;
+  background: #F3F3F3;
+
+
+  justify-content: center;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    @include core.media('<680px') {
+      flex-wrap: wrap;
+    }
+  }
+
+
+  &__container {
+    position: relative;
+    width: 897px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    position: relative;
+    width: 100%;
+
+    p {
+      color: var(--Gray, #414458);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+    }
+
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__key-figures {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__challenges-and-results {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-gap: 16px;
+    margin-bottom: 16px;
+    @media (max-width: 1100px) {
+
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+    @media (max-width: 580px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: auto;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+    padding: 24px;
+    @media (max-width: 1100px) {
+      &:nth-child(3) {
+        grid-column: 1 / -1; /* Makes the 3rd item span both columns (full width) */
+
+        .block-content-case-studies__item-title {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .block-content-case-studies__item-text {
+          max-width: 100%;
+        }
+      }
+    }
+    @media (max-width: 960px) {
+      padding: 24px;
+    }
+    @media (max-width: 580px) {
+      padding: 24px;
+    }
+  }
+
+  &__item-icon {
+    position: relative;
+    width: auto;
+    margin-bottom: 24px;
+  }
+
+  &__item-title {
+    color: var(--Black, #00011A);
+
+    /* Headings/Desktop/H4-bold */
+    font-family: core.$font-primary;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+    max-width: 280px;
+    margin-bottom: 8px;
+    @media (max-width: 580px) {
+      max-width: 100%;
+    }
+  }
+
+  &__item-text {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    @media (max-width: 580px) {
+      max-width: 100%;
+    }
+
+    p {
+      position: relative;
+      color: core.$c-font-secondary;
+
+      /* Body/body-regular */
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      width: 100%;
+    }
+  }
+
+  &__quote {
+    background: core.$c-brand-primary;
+    position: core.$font-primary;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 48px;
+    overflow: hidden;
+    width: 100%;
+    @media (max-width: 960px) {
+      padding: 32px;
+    }
+  }
+
+  &__quote-text {
+    color: #FFF;
+    font-family: core.$font-primary;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 90%;
+
+    p {
+      color: #FFF !important;
+      font-family: core.$font-primary !important;
+      font-size: 20px !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      line-height: 150% !important; /* 30px */
+    }
+  }
+
+  &__quote-info {
+    padding-left: 32px;
+    position: relative;
+    width: 100%;
+    border-left: 1px solid core.$c-bg-tertiary;
+  }
+
+  &__quote-name {
+    color: #FFF;
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    position: relative;
+    width: 100%;
+  }
+
+  &__quote-position {
+    color: core.$c-bg-tertiary;
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    width: 100%;
+  }
+
+  &__challenges-and-results {
+
+  }
+
+  &__challenges-and-results {
+    position: relative;
+    width: 100%;
+  }
+
+  &__challenges-items {
+    background: #fff;
+    box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+    border-radius: 20px;
+    display: flex; /* Enables flex layout */
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    align-items: stretch; /* Makes both children have equal height */
+    @include core.media('<1082px') {
+      flex-wrap: wrap;
+      box-shadow: unset;
+      border-radius: unset;
+      background: #F3F3F3;
+    }
+
+    h3 {
+      font-family: core.$font-primary !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 150% !important;
+      width: 100% !important;
+      padding: 16px 24px !important;
+      border-bottom: 1px solid var(--Purple, #C9CAFF) !important;
+      box-sizing: border-box !important;
+    }
+
+    h4 {
+      color: var(--Black, #00011A);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      width: 100%;
+    }
+
+    p {
+      color: var(--Gray, #414458);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__challenges,
+  &__results {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1; /* Distribute equal space */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    @include core.media('<1082px') {
+      flex: auto; /* Distribute equal space */
+    }
+
+    ul {
+      width: 100%;
+      flex: 1; /* Ensures ul takes up available space */
+      display: flex;
+      flex-direction: column;
+
+      li {
+        position: relative;
+        width: 100%;
+        padding: 16px 24px 16px 44px;
+        border-bottom: 1px solid var(--Purple, #C9CAFF);
+        box-sizing: border-box;
+        min-height: 106px;
+        flex: 1; /* Make list items grow evenly */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:last-child {
+          border-bottom: unset;
+
+        }
+
+        svg {
+          position: absolute;
+          left: 16px;
+
+        }
+
+        @include core.media('<1082px') {
+          min-height: unset;
+        }
+      }
+    }
+  }
+
+  &__challenges {
+    background: #fff;
+    @include core.media('<1082px') {
+      margin-bottom: 16px;
+      border-radius: 20px;
+      overflow: hidden;
+
+    }
+  }
+
+  &__results {
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(201, 202, 255, 0.10) 0%, rgba(201, 202, 255, 0.10) 100%), #FFF;
+    @include core.media('<1082px') {
+      border-radius: 20px;
+      overflow: hidden;
+
+    }
+  }
+
+
+}

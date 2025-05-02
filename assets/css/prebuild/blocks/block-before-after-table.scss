@@ -1,0 +1,148 @@
+@use "core/core";.block-before-after-table {
+  position: relative;
+  display: flex;
+  padding: 80px 0;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+
+  @include core.media("<960px") {
+    padding: 64px 0;
+  }
+  @include core.media("<580px") {
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__challenges-items {
+    background: #fff;
+    border: 1px solid var(--Purple, #C9CAFF);
+    border-radius: 20px;
+    display: flex; /* Enables flex layout */
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    align-items: stretch; /* Makes both children have equal height */
+
+    @include core.media('<680px') {
+      flex-wrap: wrap;
+      box-shadow: unset;
+      border: unset;
+      width: 100%;
+    }
+
+    h3 {
+      font-family: core.$font-primary !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 150% !important;
+      width: 100% !important;
+      padding: 16px 24px !important;
+      border-bottom: 1px solid var(--Purple, #C9CAFF) !important;
+      box-sizing: border-box !important;
+    }
+
+    h4 {
+      color: var(--Black, #00011A);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      width: 100%;
+    }
+
+    p {
+      color: var(--Gray, #414458);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__challenges {
+    @include core.media('<680px') {
+      border: 1px solid var(--Purple, #C9CAFF);
+    }
+    border: 1px solid var(--Purple, #C9CAFF);
+  }
+
+  &__challenges,
+  &__results {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1; /* Distribute equal space */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+
+    @include core.media('<680px') {
+      flex: auto; /* Distribute equal space */
+      width: 100%;
+    }
+
+    ul {
+      width: 100%;
+      flex: 1; /* Ensures ul takes up available space */
+      display: flex;
+      flex-direction: column;
+
+      li {
+        position: relative;
+        width: 100%;
+        padding: 16px 24px 16px 44px;
+        border-bottom: 1px solid var(--Purple, #C9CAFF);
+        box-sizing: border-box;
+        min-height: 60px;
+        flex: 1; /* Make list items grow evenly */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:last-child {
+          border-bottom: unset;
+
+        }
+
+        svg {
+          position: absolute;
+          left: 16px;
+
+        }
+
+        @include core.media('<1220px') {
+          min-height: 80px;
+        }
+        @include core.media('<680px') {
+          min-height: unset;
+        }
+      }
+    }
+  }
+
+  &__challenges {
+    background: #fff;
+
+    @include core.media('<680px') {
+      margin-bottom: 16px;
+      border-radius: 20px;
+      overflow: hidden;
+
+    }
+  }
+
+  &__results {
+    background: linear-gradient(0deg, rgba(201, 202, 255, 0.10) 0%, rgba(201, 202, 255, 0.10) 100%), #FFF;
+    @include core.media('<680px') {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--Purple, #C9CAFF);
+
+    }
+  }
+
+
+}

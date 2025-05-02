@@ -1,0 +1,118 @@
+@use "core/core";.block-table-3-columns {
+  position: relative;
+  display: flex;
+  background: #F3F3F3;
+  justify-content: center;
+  width: 100%;
+  align-items: stretch; /* Ensures all columns stretch to the same height */
+
+  &__items {
+    background: #fff;
+    box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    align-items: stretch;
+
+    @include core.media('<1082px') {
+      flex-wrap: wrap;
+      box-shadow: unset;
+      border-radius: unset;
+      background: #F3F3F3;
+      width: 100%;
+    }
+
+    h3 {
+      font-family: core.$font-primary !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 150% !important;
+      width: 100% !important;
+      padding: 16px !important;
+      border-bottom: 1px solid var(--Purple, #C9CAFF) !important;
+      box-sizing: border-box !important;
+      margin-bottom: 0;
+    }
+
+    h4 {
+      color: var(--Black, #00011A);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      width: 100%;
+    }
+
+    p {
+      color: var(--Gray, #414458);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__column-one,
+  &__column-two,
+  &__column-three {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensure all columns have the same height */
+
+    @include core.media('<1082px') {
+      flex: auto;
+      width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    /* Adjust ul to stretch li elements */
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; /* Stretch all li items to equal height */
+
+      li {
+        position: relative;
+        width: 100%;
+        padding: 16px;
+        border-bottom: 1px solid var(--Purple, #C9CAFF);
+        box-sizing: border-box;
+        display: flex;
+        min-height: 340px;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:last-child {
+          border-bottom: unset;
+        }
+
+        svg {
+          position: absolute;
+          left: 16px;
+        }
+
+        @include core.media('<1082px') {
+          min-height: unset; /* Remove min-height to allow flex to control height */
+        }
+      }
+    }
+  }
+
+  &__column-two {
+    border-left: 1px solid var(--Purple, #C9CAFF);
+    border-right: 1px solid var(--Purple, #C9CAFF);
+    @include core.media('<1082px') {
+      border-left: unset;
+      border-right: unset;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@use "core/core";.single-acf-block {
+  &__quote {
+    background: core.$c-brand-primary;
+    position: core.$font-primary;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 48px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    width: 100%;
+    @media (max-width: 960px) {
+      padding: 32px;
+    }
+  }
+
+  &__quote-text {
+    color: #FFF;
+    font-family: core.$font-primary;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 90%;
+
+    p {
+      color: #FFF !important;
+      font-family: core.$font-primary !important;
+      font-size: 20px !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      line-height: 150% !important; /* 30px */
+    }
+  }
+
+  &__quote-info {
+    padding-left: 32px;
+    position: relative;
+    width: 100%;
+    border-left: 1px solid core.$c-bg-tertiary;
+  }
+
+  &__quote-name {
+    color: #FFF;
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    position: relative;
+    width: 100%;
+  }
+
+  &__quote-position {
+    color: core.$c-bg-tertiary;
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    width: 100%;
+  }
+
+}

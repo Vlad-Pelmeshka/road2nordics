@@ -1,0 +1,134 @@
+@use "core/core";.single-acf-block {
+  position: relative;
+  display: flex;
+  background: #F3F3F3;
+
+  justify-content: center;
+  width: 100%;
+
+  &__challenges-and-results {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__challenges-items {
+    background: #fff;
+    box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+    border-radius: 20px;
+    display: flex; /* Enables flex layout */
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    align-items: stretch; /* Makes both children have equal height */
+
+    @include core.media('<1082px') {
+      flex-wrap: wrap;
+      box-shadow: unset;
+      border-radius: unset;
+      background: #F3F3F3;
+      width: 100%;
+    }
+
+    h3 {
+      font-family: core.$font-primary !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 150% !important;
+      width: 100% !important;
+      padding: 16px 24px !important;
+      border-bottom: 1px solid var(--Purple, #C9CAFF) !important;
+      box-sizing: border-box !important;
+    }
+
+    h4 {
+      color: var(--Black, #00011A);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      width: 100%;
+    }
+
+    p {
+      color: var(--Gray, #414458);
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__challenges,
+  &__results {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1; /* Distribute equal space */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+
+    @include core.media('<1082px') {
+      flex: auto; /* Distribute equal space */
+      width: 100%;
+    }
+
+    ul {
+      width: 100%;
+      flex: 1; /* Ensures ul takes up available space */
+      display: flex;
+      flex-direction: column;
+
+      li {
+        position: relative;
+        width: 100%;
+        padding: 16px 24px 16px 44px;
+        border-bottom: 1px solid var(--Purple, #C9CAFF);
+        box-sizing: border-box;
+        min-height: 106px;
+        flex: 1; /* Make list items grow evenly */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:last-child {
+          border-bottom: unset;
+
+        }
+
+        svg {
+          position: absolute;
+          left: 16px;
+
+        }
+
+        @include core.media('<1082px') {
+          min-height: unset;
+        }
+      }
+    }
+  }
+
+  &__challenges {
+    background: #fff;
+
+    @include core.media('<1082px') {
+      margin-bottom: 16px;
+      border-radius: 20px;
+      overflow: hidden;
+
+    }
+  }
+
+  &__results {
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(201, 202, 255, 0.10) 0%, rgba(201, 202, 255, 0.10) 100%), #FFF;
+    @include core.media('<1082px') {
+      border-radius: 20px;
+      overflow: hidden;
+
+    }
+  }
+
+
+}

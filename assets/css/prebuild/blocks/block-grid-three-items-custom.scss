@@ -1,0 +1,126 @@
+@use "core/core";.block-grid-three-items-custom {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  width: 100%;
+
+  &__inner {
+    max-width: 1360px;
+  }
+
+  &__title {
+    font-family: core.$font-primary;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: #1f283c;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+
+      font-size: 26px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    color: #60687B;
+    font-size: 16px;
+    position: relative;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 835px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    @media (max-width: 961px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      grid-template-areas:
+        "item1 item2"
+        "item3 item3";
+
+      // Assign grid areas
+      & > :nth-child(1) {
+        grid-area: item1;
+      }
+      & > :nth-child(2) {
+        grid-area: item2;
+      }
+      & > :nth-child(3) {
+        grid-area: item3;
+      }
+    }
+    @media (max-width: 768px) {
+      // Mobile: 1 column
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "item1"
+      "item2"
+      "item3";
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__item-image {
+    position: relative;
+    height: 70px;
+    width: auto;
+
+    img {
+      width: 130px;
+    }
+  }
+
+  &__item-content {
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  &__item-title {
+    font-family: core.$font-primary;
+    font-size: 22px;
+    line-height: 1.5em;
+
+    margin-bottom: 10px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    color: #374052;
+    @media (max-width: 960px) {
+
+      font-size: 22px;
+    }
+  }
+
+  &__item-text {
+    text-align: center;
+    color: #60687B;
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+}

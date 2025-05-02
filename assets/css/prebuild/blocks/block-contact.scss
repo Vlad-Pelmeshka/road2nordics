@@ -1,0 +1,238 @@
+@use "core/core";/* ==============================
+   General Contact Form Styling
+   ============================== */
+.block-contact {
+  width: 100%;
+  display: flex;
+  padding: 80px 0;
+  justify-content: center;
+  position: relative;
+  @include core.media("<960px") {
+    padding: 64px 0;
+  }
+  @include core.media("<580px") {
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 960px) {
+      flex-wrap: wrap;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 48px;
+    overflow: hidden;
+    width: 69%;
+    @media (max-width: 960px) {
+      width: 100%;
+      max-height: unset;
+    }
+    @media (max-width: 580px) {
+      padding: 32px;
+    }
+
+
+  }
+
+  nf-fields-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    nf-field {
+      width: 100%;
+    }
+
+    nf-field:nth-child(1) {
+      width: 49% !important;
+      @media (max-width: 770px) {
+        width: 100% !important;
+      }
+
+    }
+
+    nf-field:nth-child(2) {
+      width: 49% !important;
+      @media (max-width: 770px) {
+        width: 100% !important;
+      }
+
+    }
+  }
+
+  &__image {
+    width: 30%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+
+    @media (max-width: 960px) {
+      width: 100%;
+      max-height: 340px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 580px) {
+      height: 260px;
+    }
+
+    img {
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      right: 0;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: inherit;
+
+      &.mob {
+        display: none;
+        @media (max-width: 960px) {
+          display: block;
+        }
+      }
+
+      &.des {
+
+        @media (max-width: 960px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__pse {
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    right: 0;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  &__text {
+    color: var(--Gray, #414458);
+
+    /* Headings/Tablet/H4-regular */
+    font-family: core.$font-primary;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    margin-bottom: 20px;
+  }
+}
+
+/* ==============================
+   Ninja Forms Floating Labels
+   ============================== */
+.nf-field-container {
+  position: relative;
+  margin-bottom: 25px;
+
+  .nf-field {
+    position: relative;
+
+    /* Label Styling */
+    .nf-field-label {
+      position: relative;
+      width: 100%;
+      display: block;
+    }
+
+
+    /* Input & Textarea Styling */
+    .nf-field-element input[type="text"], input[type="email"],
+    .nf-field-element textarea {
+      width: 100%;
+      padding: 0 15px 10px 0px;
+      border: none;
+      border-bottom: 1px solid #E4E4E4;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      outline: none;
+
+      &:focus {
+        border-bottom-color: #4a90e2;
+      }
+    }
+
+    textarea {
+      height: 30px;
+      resize: vertical;
+    }
+  }
+}
+
+/* ==============================
+   Submit Button Styling
+   ============================== */
+
+/* ==============================
+   Error Message Styling
+   ============================== */
+.nf-error-wrap {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.nf-response-msg {
+  background: #f0f9ff;
+  color: #0077cc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ==============================
+   Focus Transition Enhancements
+   ============================== */
+.nf-field.focused .nf-field-element input,
+.nf-field.focused .nf-field-element textarea {
+  border-bottom: 2px solid #4a90e2;
+}
+
+/* Placeholder Visibility (Hidden for Floating Label Effect) */
+.nf-field input::placeholder,
+.nf-field textarea::placeholder {
+  color: transparent;
+}
+
+.nf-response-msg {
+  background: #f0f9ff;
+  color: #07c;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nf-field-container {
+  margin-bottom: 0;
+}

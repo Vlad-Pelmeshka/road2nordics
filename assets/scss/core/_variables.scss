@@ -1,0 +1,81 @@
+// Brand
+$c-brand-primary: #FF7010;
+
+$c-brand-primary-hover: #214EEB;
+$c-brand-secondary: #829DFF;
+$c-brand-secondary-hover: #FFCF6E;
+
+// Background
+$c-bg-primary: #214EEB;
+$c-bg-main: #214EEB;
+$c-bg-secondary: #829DFF;
+$c-bg-tertiary: #C9CAFF;
+$c-bg-border: #E2E5EB;
+$c-buttons: #FFC550;
+
+$hover: #214EEB;
+
+
+$hamburger-color: #214EEB; // Adjust as needed
+$menu-background: #fff; // Background color for the dropdown menu
+$shadow-color: rgba(0, 0, 0, 0.2); // Shadow color
+// Fonts
+$font-primary: "Archivo", sans-serif;
+$font-secondary: "Archivo", sans-serif;
+$c-font-primary: #00011A;
+$c-font-secondary: #414458;
+$c-font-tertiary: #84879D;
+$c-font-link: #F4AE26;
+
+//header
+
+// Other
+
+// Media Queries
+$screen-min: 375px !default;
+$screen-design: 1440px !default;
+
+$desktop-hover: 1025px;
+$desktop-animation: 1025px;
+
+$screen-xs: 530px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-phone: $screen-xs-min !default;
+
+$screen-ph: 600px !default;
+
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-tablet: $screen-sm-min !default;
+
+$screen-md: 1024px !default;
+$screen-md-min: $screen-md !default;
+$screen-desktop: $screen-md-min !default;
+
+$screen-lg: 1280px !default;
+$screen-lg-min: $screen-lg !default;
+$screen-lg-desktop: $screen-lg-min !default;
+
+$screen-xl: 1440px !default;
+$screen-xxl: 1860px;
+$screen-xxxl: 2000px;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+// Media queries breakpoints
+$breakpoints: (
+        'phone': $screen-xs,
+        'phablet': $screen-ph,
+        'tablet': $screen-sm,
+        'desktop': $screen-md,
+        'widescreen': $screen-lg,
+        'largescreen': $screen-xl,
+        'hdscreen' : $screen-xxl,
+        '2kscreen' : $screen-xxxl,
+        'desktop-anim': $desktop-animation,
+        'desktop-hover': $desktop-hover,
+        'screen-design': $screen-design
+);

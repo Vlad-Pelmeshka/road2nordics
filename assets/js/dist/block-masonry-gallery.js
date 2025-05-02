@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){GLightbox({selector:".glightbox",touchNavigation:!0,openEffect:"zoom",loop:!0})});

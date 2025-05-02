@@ -1,0 +1,137 @@
+@use "core/core";.block-image-text-rotate {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #1f283c;
+
+  width: 100%;
+  @media (max-width: 1025px) {
+
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    position: relative;
+    min-height: 560px;
+    width: 50%;
+    @media (max-width: 1025px) {
+
+      width: 100%;
+    }
+    @media (max-width: 765px) {
+
+      min-height: 252px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: 0px 60px 0px 60px;
+    box-sizing: border-box;
+
+    width: 50%;
+    @media (max-width: 1025px) {
+      padding: 30px 20px 30px 20px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: core.$font-primary;
+    font-size: 34px;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 22px;
+    position: relative;
+    color: #fff;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: #fff;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+
+      font-size: 26px;
+    }
+
+
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .flip-container {
+    width: 550px;
+    height: 550px;
+    position: relative;
+    margin: auto; /* Centers the container horizontally */
+    z-index: 2;
+    @media (max-width: 560px) {
+      width: 100%;
+      height: 408px;
+    }
+  }
+
+  .flipper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 6s;
+    z-index: 2;
+  }
+
+  .front,
+  .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .front {
+    transform: rotateY(0deg);
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  /* Keyframes for flipping animation */
+  @keyframes flipAnimation {
+    0%, 50% {
+      transform: rotateY(0deg);
+    }
+    25%, 75% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  /* Apply animation */
+  .flipper {
+    animation: flipAnimation 12s infinite;
+  }
+
+  /* End custom CSS */
+
+}

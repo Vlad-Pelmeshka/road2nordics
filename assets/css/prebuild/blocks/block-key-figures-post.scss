@@ -1,0 +1,117 @@
+@use "core/core";
+.single-acf-block {
+  &__key-figures {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__challenges-and-results {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-gap: 16px;
+    margin-bottom: 16px;
+    @media (max-width: 1100px) {
+
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+    @media (max-width: 580px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: auto;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+    padding: 24px;
+    @media (max-width: 1100px) {
+      &:nth-child(3) {
+        grid-column: 1 / -1; /* Makes the 3rd item span both columns (full width) */
+
+        .block-content-case-studies__item-title {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .block-content-case-studies__item-text {
+          max-width: 100%;
+        }
+      }
+    }
+    @media (max-width: 960px) {
+      padding: 24px;
+    }
+    @media (max-width: 580px) {
+      padding: 24px;
+    }
+  }
+
+  &__item-icon {
+    position: relative;
+    width: auto;
+    margin-bottom: 24px;
+  }
+
+  &__item-title {
+    color: var(--Black, #00011A);
+
+    /* Headings/Desktop/H4-bold */
+    font-family: core.$font-primary;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+    max-width: 280px;
+    margin-bottom: 8px;
+    @media (max-width: 580px) {
+      max-width: 100%;
+    }
+  }
+
+  &__item-text {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    position: relative;
+    color: core.$c-font-secondary;
+
+    /* Body/body-regular */
+    font-family: core.$font-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    width: 100%;
+    @media (max-width: 580px) {
+      max-width: 100%;
+    }
+
+    p {
+      position: relative;
+      color: core.$c-font-secondary;
+
+      /* Body/body-regular */
+      font-family: core.$font-primary;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      width: 100%;
+    }
+  }
+
+}
+
