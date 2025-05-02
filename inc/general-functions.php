@@ -143,9 +143,10 @@ function mytheme_setup() {
 }
 add_action( 'after_setup_theme', 'mytheme_setup' );
 /* Debugger */
-function dd( $e ) {
-	echo '<pre>';
-	echo var_dump( $e );
-	echo '</pre>';
-	die();
-}
+// function dd( $e ) {
+// 	echo '<pre>';
+// 	echo var_dump( $e );
+// 	echo '</pre>';
+// 	die();
+// }
+

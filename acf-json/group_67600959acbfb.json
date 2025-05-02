@@ -57,7 +57,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -66,7 +66,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "allow_in_bindings": 0,
             "preview_size": "medium"
         },
         {
@@ -141,7 +140,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -171,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742386679
+    "modified": 1746191796
 }
