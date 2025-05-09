@@ -87,7 +87,11 @@ $section_id = get_field('section_id');
 
     <div class="block-adventure__image">
         <?php if ($image = get_field('image')): ?>
-            <img class="img-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+            <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                'alt'     => $image['alt'],
+                'loading' => 'eager',
+                'class'   => 'img-cover'
+            ] ) ?>
         <?php endif; ?>
     </div>
 

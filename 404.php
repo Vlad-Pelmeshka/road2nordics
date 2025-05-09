@@ -7,7 +7,7 @@
                 <div class="not-found__content-inner">
                     <?php if ($lg = get_field('logo_404', 'option')): ?>
                         <div class="not-found__logo">
-                            <?php echo wp_get_attachment_image( $lg, [ 200, 0 ], false, [ 
+                            <?php echo wp_get_attachment_image( $lg, 'full', false, [ 
                                 'alt'     => 'Logo 404',
                                 'loading' => 'eager'
                             ] ) ?>

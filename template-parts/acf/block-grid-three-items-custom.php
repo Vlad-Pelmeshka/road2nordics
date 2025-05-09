@@ -33,7 +33,10 @@ $section_id = get_field('section_id');
                 <div class="block-grid-three-items-custom__item">
                     <?php if ($img_item = get_sub_field('image')): ?>
                         <div class="block-grid-three-items-custom__item-image">
-                            <img  src="<?php echo $img_item['url']; ?>" alt="<?php echo $img_item['alt']; ?>">
+                            <?php echo wp_get_attachment_image( $img_item['ID'], 'full', false, [ 
+                                'alt'     => $img_item['alt'],
+                                'loading' => 'eager'
+                            ] ) ?>
                         </div>
                     <?php endif; ?>
                     <div class="block-grid-three-items-custom__item-content">
