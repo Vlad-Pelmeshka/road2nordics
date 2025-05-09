@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 	
-    var baseSpeed = 2;
+    var baseSpeed = 0.5;
 
     // Adjust autoScroll speed based on screen width
     if (window.innerWidth <= 320) {
