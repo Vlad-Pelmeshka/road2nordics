@@ -18,7 +18,7 @@ $video_url  = get_field('video');
 <section class="banner-hero-ebook">
     <?php if(!empty($video_url)): ?>
         <div class="banner-hero-ebook__pse">
-            <video autoplay loop src="<?php echo $video_url['url']; ?>"></video>
+            <video autoplay muted loop playsinline preload="metadata" src="<?php echo $video_url['url']; ?>"></video>
         </div>
     <?php endif; ?>
     <div class="banner-hero-ebook__inner inner">
