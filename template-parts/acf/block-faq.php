@@ -1,19 +1,22 @@
 <?php
-/*
-Block: FAQ
+/**
+ * Block: FAQ
+ * @var array $block
  */
+
+if (is_admin()){
+    echo __('Block: FAQ');
+}
+
+$title      = get_field('title');
+$section_id = get_field('section_id') ?: 'faq_section';
+
 ?>
-<?php if (is_admin()): ?>
-    <?php echo __('Block: FAQ'); ?>
-<?php endif; ?>
-<?php
-$section_id = get_field('section_id');
-?>
-<section id="<?php if ($section_id = get_field('section_id')):?><?php echo $section_id; ?><?php endif; ?>"
-         class="block-faq faq-animate" data-scroll-section>
+
+<section id="<?php echo $section_id; ?>" class="block-faq faq-animate" data-scroll-section>
     <div class="block-faq__inner inner faq-animate-inner">
         <div class="block-faq__content col-start faq-animate-content" data-scroll data-scroll-offset="15%">
-            <?php if ($title = get_field('title')): ?>
+            <?php if ($title): ?>
                 <h2 class="block-faq__title  faq-animate-title"><?php echo $title; ?></h2>
             <?php endif; ?>
         </div>

@@ -1,15 +1,17 @@
 <?php
 /**
  * Block: Masonry Gallery
+ * @var array $block
  */
 
-if (is_admin()): ?>
-    <?php echo __('Block: Masonry Gallery'); ?>
-<?php endif;
+if (is_admin()){
+    echo __('Block: Masonry Gallery');
+}
 
-$gallery = get_field('gallery_images');
-$section_id = get_field('section_id');
-$title = get_field('title');
+$title      = get_field('title');
+$gallery    = get_field('gallery_images');
+$section_id = get_field('section_id') ?: 'masonry_gallery';
+
 ?>
 
 <?php if ($gallery): ?>

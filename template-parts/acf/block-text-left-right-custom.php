@@ -4,36 +4,27 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Image Text Left Right Custom'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Image Text Left Right Custom');
+}
 
-<?php
-$title = get_field('title');
-$text = get_field('text');
-$bg = get_field('background_image');
-$image = get_field('image');
-$choose_mode = get_field('leftright');
-$section_id = get_field('section_id');
+$title          = get_field('title');
+$text           = get_field('text');
+$bg             = get_field('background_image');
+$image          = get_field('image');
+$choose_mode    = get_field('leftright');
+$section_id     = get_field('section_id') ?: 'text-left-right-custom_section';
+
 ?>
 
-<?php if (!$choose_mode) : ?>
-    <section id="<?php if ($section_id = get_field('section_id')): ?><?php echo $section_id; ?><?php endif; ?>"
-             class="block-image-text-left-right-custom">
+<?php if ($choose_mode) : ?>
+    <section id="<?php echo $section_id; ?>" class="block-image-text-left-right-custom right ">
         <?php if ($bg): ?>
-            <img class="img-cover" src="<?php echo $bg['url']; ?>" alt="
-        <?php echo $bg['alt']; ?>"/>
+            <?php echo wp_get_attachment_image( $bg['ID'], 'full', false, [ 
+				'class' => 'img-cover',
+				'alt'   => $bg['alt'] ?: "$title BG 2 " . $bg['ID'],
+			] ) ?>
         <?php endif; ?>
-        <div class="block-image-text-left-right-custom__image">
-            <?php if ($image = get_field('image')): ?>
-                <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
-                    'alt'     => $image['alt'],
-                    'loading' => 'eager',
-                    'class'   => 'img-cover'
-                ] ) ?>
-            <?php endif; ?>
-        </div>
-
         <div class="block-image-text-left-right-custom__content">
 
             <?php if ($title): ?>
@@ -52,16 +43,35 @@ $section_id = get_field('section_id');
                     </a>
                 <?php endif; ?>
             </div>
+        </div>
+        <div class="block-image-text-left-right-custom__image">
+            <?php if ($image = get_field('image')): ?>
+                <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                    'alt'     => $image['alt'] ?: ('Block Trip Icon ' . $image['ID']),
+                    'loading' => 'eager',
+                    'class'   => 'img-cover'
+                ] ) ?>
+            <?php endif; ?>
         </div>
     </section>
-<?php endif; ?>
-<?php if ($choose_mode) : ?>
-    <section id="<?php if ($section_id = get_field('section_id')): ?><?php echo $section_id; ?><?php endif; ?>"
-             class="block-image-text-left-right-custom right ">
+<?php else: ?>
+    <section id="<?php echo $section_id; ?>" class="block-image-text-left-right-custom">
         <?php if ($bg): ?>
-            <img class="img-cover" src="<?php echo $bg['url']; ?>" alt="
-        <?php echo $bg['alt']; ?>"/>
+            <?php echo wp_get_attachment_image( $bg['ID'], 'full', false, [ 
+				'class' => 'img-cover',
+				'alt'   => $bg['alt'] ?: "$title Bg " . $bg['ID'],
+			] ) ?>
         <?php endif; ?>
+        <div class="block-image-text-left-right-custom__image">
+            <?php if ($image = get_field('image')): ?>
+                <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                    'alt'     => $image['alt'] ?: ('Block Trip Icon ' . $image['ID']),
+                    'loading' => 'eager',
+                    'class'   => 'img-cover'
+                ] ) ?>
+            <?php endif; ?>
+        </div>
+
         <div class="block-image-text-left-right-custom__content">
 
             <?php if ($title): ?>
@@ -80,15 +90,6 @@ $section_id = get_field('section_id');
                     </a>
                 <?php endif; ?>
             </div>
-        </div>
-        <div class="block-image-text-left-right-custom__image">
-            <?php if ($image = get_field('image')): ?>
-                <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
-                    'alt'     => $image['alt'],
-                    'loading' => 'eager',
-                    'class'   => 'img-cover'
-                ] ) ?>
-            <?php endif; ?>
         </div>
     </section>
 <?php endif; ?>

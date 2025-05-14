@@ -4,22 +4,22 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Adventure'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Adventure');
+}
 
-<?php
-$title = get_field('title');
-$text = get_field('text');
-$price = get_field('price');
-$price_d = get_field('discount_price');
-$save = get_field('save');
-$image = get_field('image');
+$title      = get_field('title');
+$text       = get_field('text');
+$price      = get_field('price');
+$price_d    = get_field('discount_price');
+$save       = get_field('save');
+$image      = get_field('image');
 $extra_text = get_field('extra_text_for_price');
-$section_id = get_field('section_id');
+$section_id = get_field('section_id') ?: 'adventure_section';
+
 ?>
-<section id="<?php if ($section_id = get_field('section_id')): ?><?php echo $section_id; ?><?php endif; ?>"
-         class="block-adventure">
+
+<section id="<?php echo $section_id; ?>" class="block-adventure">
 
     <div class="block-adventure__content">
         <?php if ($title): ?>
@@ -27,7 +27,9 @@ $section_id = get_field('section_id');
         <?php endif; ?>
         <?php if ($icon = get_field('icon')): ?>
             <div class="block-adventure__icon">
-                <img class="" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>"/>
+                <?php echo wp_get_attachment_image( $icon['ID'], 'full', false, [ 
+                    'alt'     => 'Adventure icon ' . $icon['ID'],
+                ] ) ?>
             </div>
 
         <?php endif; ?>
@@ -88,7 +90,7 @@ $section_id = get_field('section_id');
     <div class="block-adventure__image">
         <?php if ($image = get_field('image')): ?>
             <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
-                'alt'     => $image['alt'],
+                'alt'     => $image['alt'] ?: 'Adventure Image Cover',
                 'loading' => 'eager',
                 'class'   => 'img-cover'
             ] ) ?>

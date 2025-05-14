@@ -4,18 +4,17 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Testimonials'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Testimonials');
+}
 
-<?php
-// fields
-$title = get_field('title');
-$testimonials = get_field('items');
-$section_id = get_field('section_id');
+$title          = get_field('title');
+$testimonials   = get_field('items');
+$section_id     = get_field('section_id') ?: 'testimonials_section';
+
 ?>
 
-<section class="block-testimonials grid-animate">
+<section class="block-testimonials grid-animate" id="<?php echo $section_id; ?>">
     <div class="block-testimonials__inner inner grid-animate-inner">
         <?php if ($title): ?>
             <h2 class="block-testimonials__title block-title"><?php echo $title; ?></h2>

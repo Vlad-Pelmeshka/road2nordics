@@ -4,20 +4,23 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Journey'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Journey');
+}
 
-<?php
 $title = get_field('title');
 $text = get_field('text');
-$image = get_field('image');;
-?>
-<section class="block-journey">
+$image = get_field('image');
 
+?>
+
+<section class="block-journey">
     <div class="block-journey__inner inner">
         <?php if ($image = get_field('image')): ?>
-            <img class="img-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+            <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                'class'   => "img-cover",
+                'alt'     => $image['alt'] ?: ('Image journey' . $image['ID']),
+            ] ) ?>
         <?php endif; ?>
 
         <div class="block-journey__content">

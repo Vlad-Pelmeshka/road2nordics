@@ -4,11 +4,10 @@
  * @var array $block
  */
 
-if ( is_admin() ) : ?>
-	<?php echo __( 'Block: Image Text Left Right' ); ?>
-<?php endif; ?>
+if (is_admin()){
+	echo __( 'Block: Image Text Left Right' );
+} 
 
-<?php
 $title        = get_field( 'title' );
 $text         = get_field( 'text' );
 $icon         = get_field( 'icon' );
@@ -16,31 +15,26 @@ $bg           = get_field( 'background_image' );
 $image        = get_field( 'image' );
 $choose_mode  = get_field( 'leftright' );
 $choose_white = get_field( 'white_color' );
-$section_id   = get_field( 'section_id' );
+$section_id   = get_field( 'section_id' ) ?: 'text-left-right_section';
+
 ?>
 
-<?php if ( ! $choose_mode ) : ?>
-	<section id="<?php if ( $section_id = get_field( 'section_id' ) ) : ?><?php echo $section_id; ?><?php endif; ?>"
-		class="block-image-text-left-right">
+<?php if ( $choose_mode ) : ?>
+	<section id="<?php echo $section_id; ?>" class="block-image-text-left-right right ">
 		<?php if ( $bg ) : ?>
-			<img class="img-cover" src="<?php echo $bg['url']; ?>" alt="
-		<?php echo $bg['alt']; ?>" />
+			<?php echo wp_get_attachment_image( $bg['ID'], 'full', false, [ 
+				'class' => 'img-cover',
+				'alt'   => $bg['alt'] ?: "$title Icon " . $bg['ID'],
+			] ) ?>
 		<?php endif; ?>
-		<div class="block-image-text-left-right__image">
-			<?php if ( $image = get_field( 'image' ) ) : ?>
-				<?php echo wp_get_attachment_image( $image, [ 0, 560 ], false, [ 
-					'class' => 'img-cover'
-				] ) ?>
-			<?php endif; ?>
-		</div>
-
 		<div
 			class="block-image-text-left-right__content <?php if ( $choose_white ) : ?><?php echo 'white'; ?><?php endif; ?>">
 
 			<?php if ( $icon ) : ?>
 				<div class="block-image-text-left-right__icon">
 					<?php echo wp_get_attachment_image( $icon, [ 32, 0 ], false, [ 
-						'class' => 'icon'
+						'class' => 'icon',
+						'alt'   => "$title Icon 2 $icon",
 					] ) ?>
 				</div>
 
@@ -61,23 +55,42 @@ $section_id   = get_field( 'section_id' );
 					</a>
 				<?php endif; ?>
 			</div>
+		</div>
+		<div class="block-image-text-left-right__image">
+			<?php if ( $image = get_field( 'image' ) ) : ?>
+				<?php echo wp_get_attachment_image( $image, [ 0, 560 ], false, [ 
+					'class' => 'img-cover',
+					'alt'	=> "$title Image 2 $image",
+				] ) ?>
+			<?php endif; ?>
 		</div>
 	</section>
-<?php endif; ?>
-<?php if ( $choose_mode ) : ?>
-	<section id="<?php if ( $section_id = get_field( 'section_id' ) ) : ?><?php echo $section_id; ?><?php endif; ?>"
-		class="block-image-text-left-right right ">
+<?php else: ?>
+	<section id="<?php echo $section_id; ?>"
+		class="block-image-text-left-right">
 		<?php if ( $bg ) : ?>
-			<img class="img-cover" src="<?php echo $bg['url']; ?>" alt="
-		<?php echo $bg['alt']; ?>" />
+			<?php echo wp_get_attachment_image( $bg['ID'], 'full', false, [ 
+				'class' => 'img-cover',
+				'alt'   => $bg['alt'] ?: "$title Image " . $bg['ID'],
+			] ) ?>
 		<?php endif; ?>
+		<div class="block-image-text-left-right__image">
+			<?php if ( $image = get_field( 'image' ) ) : ?>
+				<?php echo wp_get_attachment_image( $image, [ 0, 560 ], false, [ 
+					'class' => 'img-cover',
+					'alt'	=> "$title Image $image",
+				] ) ?>
+			<?php endif; ?>
+		</div>
+
 		<div
 			class="block-image-text-left-right__content <?php if ( $choose_white ) : ?><?php echo 'white'; ?><?php endif; ?>">
 
 			<?php if ( $icon ) : ?>
 				<div class="block-image-text-left-right__icon">
 					<?php echo wp_get_attachment_image( $icon, [ 32, 0 ], false, [ 
-						'class' => 'icon'
+						'class' => 'icon',
+						'alt'   => "$title Icon $icon",
 					] ) ?>
 				</div>
 
@@ -98,13 +111,6 @@ $section_id   = get_field( 'section_id' );
 					</a>
 				<?php endif; ?>
 			</div>
-		</div>
-		<div class="block-image-text-left-right__image">
-			<?php if ( $image = get_field( 'image' ) ) : ?>
-				<?php echo wp_get_attachment_image( $image, [ 0, 560 ], false, [ 
-					'class' => 'img-cover'
-				] ) ?>
-			<?php endif; ?>
 		</div>
 	</section>
 <?php endif; ?>

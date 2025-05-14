@@ -4,15 +4,12 @@
  * @var array $block
  */
 
-if ( is_admin() ) : ?>
-	<?php echo __( 'Block: Reviews' ); ?>
-<?php endif; ?>
+if (is_admin()){
+	echo __( 'Block: Reviews' );
+} 
 
-<?php
-// fields
+$image_url = get_template_directory_uri() . '/assets/images/home/Stars.png'; 
 
-
-$image_url = get_template_directory_uri() . '/assets/images/home/Stars.png'; // Adjust the path and filename as per your directory structure
 ?>
 
 <section class="block-reviews grid-animate">
@@ -30,11 +27,12 @@ $image_url = get_template_directory_uri() . '/assets/images/home/Stars.png'; // 
 							<?php if ( $icon = get_sub_field( 'photo' ) ) : ?>
 								<?php echo wp_get_attachment_image( $icon, [ 150, 0 ], false, [ 
 									'class' => 'block-reviews__item-icon grid-animate-icon',
-									'alt'   => 'photo'
+									'alt'   => "Review Icon $icon",
 								] ) ?>
 							<?php endif; ?>
 							<div class="block-reviews__item-stars">
 								<img class="" src="<?php echo $image_url; ?>" alt="stars" width="175" height="25">
+								
 							</div>
 
 							<?php if ( $text = get_sub_field( 'text' ) ) : ?>

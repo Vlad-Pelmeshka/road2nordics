@@ -4,22 +4,23 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Banner: Hero Ebook'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Banner: Hero Ebook');
+}
 
-<?php
-$title = get_field('title');
-$subtitle = get_field('subtitle');
-$text = get_field('text');
-$cta = get_field('button');
-$video_url = get_field('video');;
+$title      = get_field('title');
+$subtitle   = get_field('subtitle');
+$text       = get_field('text');
+$cta        = get_field('button');
+$video_url  = get_field('video');
+
 ?>
 <section class="banner-hero-ebook">
-    <div class="banner-hero-ebook__pse">
-
-        <video autoplay loop src="<?php echo $video_url['url']; ?>"></video>
-    </div>
+    <?php if(!empty($video_url)): ?>
+        <div class="banner-hero-ebook__pse">
+            <video autoplay loop src="<?php echo $video_url['url']; ?>"></video>
+        </div>
+    <?php endif; ?>
     <div class="banner-hero-ebook__inner inner">
         <div class="banner-hero-ebook__content">
             <?php if ($subtitle): ?>
@@ -31,14 +32,15 @@ $video_url = get_field('video');;
             <div class="banner-hero-ebook__container">
                 <div class="banner-hero-ebook__image animate-image">
                     <?php if ($image = get_field('image')): ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                        <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                            'alt'     => 'Banner hero ebook ' . $image['ID'],
+                        ] ) ?>
                     <?php endif; ?>
                 </div>
                 <?php if ($text): ?>
                     <p class="banner-hero-ebook__text animate-text"><?php echo $text; ?></p>
                 <?php endif; ?>
             </div>
-
 
             <div class="banner-hero-ebook__btn animate-btn">
                 <?php if ($cta = get_field('button')): ?>
@@ -52,7 +54,5 @@ $video_url = get_field('video');;
                 <?php endif; ?>
             </div>
         </div>
-
-
     </div>
 </section>

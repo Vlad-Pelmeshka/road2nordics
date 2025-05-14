@@ -4,18 +4,15 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Grid Item'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Grid Item');
+}
 
-<?php
-// fields
-
-$quote_text = get_field('quote_text');
-$quote_name = get_field('quote_name');
+$quote_text     = get_field('quote_text');
+$quote_name     = get_field('quote_name');
 $quote_position = get_field('quote_position');
+$image_url      = get_template_directory_uri() . '/assets/images/home/banner_bg.jpg';
 
-$image_url = get_template_directory_uri() . '/assets/images/home/banner_bg.jpg'; // Adjust the path and filename as per your directory structure
 ?>
 
 <section class="block-grid-items grid-animate">
@@ -27,7 +24,10 @@ $image_url = get_template_directory_uri() . '/assets/images/home/banner_bg.jpg';
                         <div class="block-grid-items__item-container grid-animate-container">
                             <div class="block-grid-items__item-content grid-animate-content">
                                 <?php if ($icon = get_sub_field('icon')): ?>
-                                    <img class="block-grid-items__item-icon grid-animate-icon" src="<?php echo $icon['url']; ?>" alt="features">
+                                    <?php echo wp_get_attachment_image( $icon['ID'], 'full', false, [ 
+                                        'class'   => "block-grid-items__item-icon grid-animate-icon",
+                                        'alt'     => 'icon features' . $icon['ID'],
+                                    ] ) ?>
                                 <?php endif; ?>
                                 <?php if ($title = get_sub_field('title')): ?>
                                     <h2 class="block-grid-items__item-title block-title-m grid-animate-title"><?php echo $title; ?></h2>

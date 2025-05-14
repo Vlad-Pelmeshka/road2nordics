@@ -4,18 +4,17 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Grid Three Items'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Grid Three Items');
+}
 
-<?php
-$title = get_field('title');
-$text = get_field('text');
-$section_id = get_field('section_id');
+$title      = get_field('title');
+$text       = get_field('text');
+$section_id = get_field('section_id') ?: 'grid-three-items_section';
 
 ?>
-<section class="block-grid-three-items" id="<?php if ($section_id = get_field('section_id')):?><?php echo $section_id; ?><?php endif; ?>">
 
+<section class="block-grid-three-items" id="<?php echo $section_id; ?>">
     <div class="block-grid-three-items__inner inner">
         <div class="block-grid-three-items__content">
             <?php if ($title): ?>
@@ -33,7 +32,10 @@ $section_id = get_field('section_id');
                 <div class="block-grid-three-items__item">
                     <?php if ($img_item = get_sub_field('image')): ?>
                         <div class="block-grid-three-items__item-image">
-                            <img class="img-cover" src="<?php echo $img_item['url']; ?>" alt="<?php echo $img_item['alt']; ?>">
+                            <?php echo wp_get_attachment_image( $img_item['ID'], 'full', false, [ 
+                                'alt'     => 'Grid icon ' . $img_item['ID'],
+                                'class'   => 'img-cover',
+                            ] ) ?>
                         </div>
                     <?php endif; ?>
                     <div class="block-grid-three-items__item-content">

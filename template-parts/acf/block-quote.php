@@ -4,16 +4,17 @@
  * @var array $block
  */
 
-if (is_admin()) {
-    echo esc_html__('Block: Quote', 'text-domain');
+if (is_admin()){
+    echo __('Block: Quote', 'text-domain');
 }
 
-// Fields
-$quote_text = get_field('quote_text');
-$quote_name = get_field('quote_name');
+$quote_text     = get_field('quote_text');
+$quote_name     = get_field('quote_name');
 $quote_position = get_field('quote_position');
 
-if ($quote_text): ?>
+?>
+
+<?php if ($quote_text): ?>
     <div class="single-acf-block__quote">
 
         <div class="single-acf-block__quote-text"><?php echo wp_kses_post($quote_text); ?></div>

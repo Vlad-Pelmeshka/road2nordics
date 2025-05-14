@@ -4,21 +4,22 @@
  * @var array $block
  */
 
-if ( is_admin() ) : ?>
-	<?php echo __( 'Block: Image Text' ); ?>
-<?php endif; ?>
+if (is_admin()){
+	echo __('Block: Image Text');
+}
 
-<?php
-$title = get_field( 'title' );
+$title = get_field( 'title' ) ?: '';
 $text  = get_field( 'text' );
 $image = get_field( 'image' );
-;
+
 ?>
+
 <section class="block-image-text">
 	<div class="block-image-text__image">
 		<?php if ( $image = get_field( 'image' ) ) : ?>
 			<?php echo wp_get_attachment_image( $image, [ 0, 560 ], false, [ 
-				'class' => 'img-cover'
+				'class' => 'img-cover',
+				'alt'   => "$title Image $image",
 			] ) ?>
 		<?php endif; ?>
 	</div>

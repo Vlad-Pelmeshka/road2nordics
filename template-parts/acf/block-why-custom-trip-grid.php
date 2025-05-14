@@ -4,18 +4,16 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Why Custom Trip Grid'); ?>
-<?php endif; ?>
-
-<?php
-$title = get_field('title');
-$text = get_field('text');
-$section_id = get_field('section_id');
+if (is_admin()){
+    echo __('Block: Why Custom Trip Grid');
+}
+  
+$title      = get_field('title');
+$text       = get_field('text');
+$section_id = get_field('section_id') ?: 'why-custom-trip-grid_section';
 
 ?>
-<section class="block-why-custom-trip-grid" id="<?php if ($section_id = get_field('section_id')):?><?php echo $section_id; ?><?php endif; ?>">
-
+<section class="block-why-custom-trip-grid" id="<?php echo $section_id; ?>">
     <div class="block-why-custom-trip-grid__inner inner">
         <div class="block-why-custom-trip-grid__content">
             <?php if ($title): ?>
@@ -34,7 +32,7 @@ $section_id = get_field('section_id');
                     <?php if ($img_item = get_sub_field('icon')): ?>
                         <div class="block-why-custom-trip-grid__item-image">
                             <?php echo wp_get_attachment_image( $img_item['ID'], 'thumbnail', false, [ 
-                                'alt'     => $img_item['alt'],
+                                'alt'     => $img_item['alt'] ?: 'Custom Trip Icon',
                                 'loading' => 'eager'
                             ] ) ?>
                         </div>

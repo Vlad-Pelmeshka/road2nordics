@@ -4,18 +4,19 @@
  * @var array $block
  */
 
-if ( is_admin() ) : ?>
-	<?php echo __( 'Banner: Hero' ); ?>
-<?php endif; ?>
+if ( is_admin() ){
+	echo __( 'Banner: Hero' );
+}
 
-<?php
 $title       = get_field( 'title' );
 $text        = get_field( 'text' );
 $cta         = get_field( 'button' );
 $video_url   = get_field( 'video' );
 $img_url     = get_field( 'image_main' );
-$black_fonts = get_field( 'black_fonts' ); // Get the black_fonts field
+$black_fonts = get_field( 'black_fonts' ); 
+
 ?>
+
 <section class="banner-hero <?php echo ( $black_fonts ) ? 'banner-hero--black-fonts' : ''; ?>">
 	<?php if ( $video_url || $img_url ) : ?>
 		<div class="banner-hero__pse">
@@ -23,7 +24,8 @@ $black_fonts = get_field( 'black_fonts' ); // Get the black_fonts field
 				<video autoplay loop muted playsinline preload="metadata" src="<?php echo $video_url['url']; ?>"></video>
 			<?php elseif ( $img_url ) : ?>
 				<?php echo wp_get_attachment_image( $img_url, 'full', false, [ 
-					'class' => 'img-cover'
+					'class' => 'img-cover',
+					'alt'   => 'Hero Banner Image',
 				] ) ?>
 			<?php endif; ?>
 		</div>
@@ -37,7 +39,7 @@ $black_fonts = get_field( 'black_fonts' ); // Get the black_fonts field
 			<?php if ( $image = get_field( 'image' ) ) : ?>
 				<div class="banner-hero__image">
 					<?php echo wp_get_attachment_image( $image, [ 24, 0 ], false, [
-
+						'alt'   => 'Hero Banner Icon',
 					] ) ?>
 				</div>
 			<?php endif; ?>

@@ -60,16 +60,16 @@ $settings = get_settings();
   <div class="splide__track">
     <ul class="splide__list">
       <li class="splide__slide">
-        <img src="../../assets/images/pics/slide01.jpg">
+        <img src="../../assets/images/pics/slide01.jpg" alt="splide01 01">
       </li>
       <li class="splide__slide" data-splide-interval="1000">
-        <img src="../../assets/images/pics/slide02.jpg">
+        <img src="../../assets/images/pics/slide02.jpg" alt="splide01 02">
       </li>
       <li class="splide__slide" data-splide-interval="10000">
-        <img src="../../assets/images/pics/slide03.jpg">
+        <img src="../../assets/images/pics/slide03.jpg" alt="splide01 03">
       </li>
       <li class="splide__slide">
-        <img src="../../assets/images/pics/slide04.jpg">
+        <img src="../../assets/images/pics/slide04.jpg" alt="splide01 04">
       </li>
 <!--      --><?php //render_slides(); ?>
     </ul>

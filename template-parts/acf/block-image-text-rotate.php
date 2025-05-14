@@ -4,33 +4,43 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Image Text'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Image Text');
+}
 
-<?php
 $title = get_field('title');
 $text = get_field('text');
-$image = get_field('image');;
+$image = get_field('image');
+
 ?>
+
 <section class="block-image-text-rotate">
     <div class="block-image-text-rotate__image">
         <div class="flip-container animated-section">
             <div class="flipper">
                 <?php if ($image_f = get_field('front')): ?>
                     <div class="front">
-                        <img decoding="async"  src="<?php echo $image_f['url']; ?>" alt="Front Image">
+                        <?php echo wp_get_attachment_image( $image_f['ID'], 'full', false, [ 
+                            'decoding'   => "async",
+                            'alt'     => 'Front Image Rotate',
+                        ] ) ?>
                     </div>
                 <?php endif; ?>
                 <?php if ($image_b = get_field('back')): ?>
                     <div class="back">
-                        <img decoding="async" src="<?php echo $image_b['url']; ?>" alt="Back Image">
+                        <?php echo wp_get_attachment_image( $image_b['ID'], 'full', false, [ 
+                            'decoding'   => "async",
+                            'alt'     => 'Back Image Rotate',
+                        ] ) ?>
                     </div>
                 <?php endif; ?>
             </div>
         </div>
         <?php if ($image = get_field('image')): ?>
-            <img class="img-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+            <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                'class'   => "img-cover",
+                'alt'     => $image['alt'] ?: ('Image rotate' . $image['ID']),
+            ] ) ?>
         <?php endif; ?>
 
 

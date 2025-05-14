@@ -4,19 +4,17 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Grid Two Items Custom'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Grid Two Items Custom');
+}
 
-<?php
-$title = get_field('title');
-$text = get_field('text');
-$section_id = get_field('section_id');
-
+$title      = get_field('title');
+$text       = get_field('text');
+$section_id = get_field('section_id') ?: 'grid-two-items-custom_section';
 
 ?>
-<section class="block-grid-two-items-custom" id="<?php if ($section_id = get_field('section_id')):?><?php echo $section_id; ?><?php endif; ?>">
 
+<section class="block-grid-two-items-custom" id="<?php echo $section_id; ?>">
     <div class="block-grid-two-items-custom__inner inner">
         <div class="block-grid-two-items-custom__content">
             <?php if ($title): ?>
@@ -36,7 +34,7 @@ $section_id = get_field('section_id');
                         <div class="block-grid-two-items-custom__item-image">
                             <?php echo wp_get_attachment_image( $img_item['ID'], 'full', false, [ 
                                 'class'   => 'img-cover',
-                                'alt'     => $img_item['alt'],
+                                'alt'     => $img_item['alt'] ?: ('Block Trip Icon ' . $img_item['ID']),
                                 'loading' => 'eager'
                             ] ) ?>
                         </div>

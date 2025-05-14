@@ -4,15 +4,13 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: About'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: About');
+}
 
-<?php
-// fields
+$title  = get_field('title');
+$text   = get_field('text');
 
-$title = get_field('title');
-$text = get_field('text');
 ?>
 
 <section class="block-about about-animate">
@@ -29,7 +27,10 @@ $text = get_field('text');
 
         <div class="block-about__image about-animate-image">
             <?php if ($image = get_field('image')): ?>
-                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                    'decoding'   => "async",
+                    'alt'     => 'About Image',
+                ] ) ?>
             <?php endif; ?>
         </div>
     </div>

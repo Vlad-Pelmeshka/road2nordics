@@ -42,22 +42,22 @@ $settings = get_settings();
   <div class="splide__track">
     <ul class="splide__list">
       <li style="height: 500px" class="splide__slide">
-        <img src="../../assets/images/pics/slide01.jpg">
+        <img src="../../assets/images/pics/slide01.jpg" alt="splide01 01">
       </li>
       <li style="height: 300px" class="splide__slide">
-        <img src="../../assets/images/pics/slide02.jpg">
+        <img src="../../assets/images/pics/slide02.jpg" alt="splide01 02">
       </li>
       <li style="height: 400px" class="splide__slide">
-        <img src="../../assets/images/pics/slide03.jpg">
+        <img src="../../assets/images/pics/slide03.jpg" alt="splide01 03">
       </li>
       <li style="height: 200px" class="splide__slide">
-        <img src="../../assets/images/pics/slide04.jpg">
+        <img src="../../assets/images/pics/slide04.jpg" alt="splide01 04">
       </li>
       <li style="height: 300px" class="splide__slide">
-        <img src="../../assets/images/pics/slide05.jpg">
+        <img src="../../assets/images/pics/slide05.jpg" alt="splide01 05">
       </li>
       <li style="height: 200px" class="splide__slide">
-        <img src="../../assets/images/pics/slide06.jpg">
+        <img src="../../assets/images/pics/slide06.jpg" alt="splide01 06">
       </li>
     </ul>
   </div>

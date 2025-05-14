@@ -4,16 +4,16 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Grid Mix Items'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Grid Mix Items');
+}
 
-<?php
 $title = get_field('title');
 $text = get_field('text');
-?>
-<section class="block-grid-mix-items">
 
+?>
+
+<section class="block-grid-mix-items">
     <div class="block-grid-mix-items__inner inner">
         <div class="block-grid-mix-items__content">
             <?php if ($title): ?>
@@ -37,7 +37,10 @@ $text = get_field('text');
                 <div class="block-grid-mix-items__item <?php echo $is_large ? 'large-item' : 'small-item'; ?>">
                     <?php if ($img_item): ?>
                         <div class="block-grid-mix-items__item-image">
-                            <img class="img-cover" src="<?php echo $img_item['url']; ?>" alt="<?php echo $img_item['alt']; ?>">
+                            <?php echo wp_get_attachment_image( $img_item['ID'], 'full', false, [ 
+                                'class'   => "img-cover",
+                                'alt'     => 'Grid mix items ' . $img_item['ID'],
+                            ] ) ?>
                         </div>
                     <?php endif; ?>
                     <div class="block-grid-mix-items__item-content">

@@ -4,16 +4,15 @@
  * @var array $block
  */
 
-if ( is_admin() ) : ?>
-	<?php echo __( 'Banner: Hero' ); ?>
-<?php endif; ?>
+if (is_admin()){
+	echo __( 'Banner: Hero' );
+}
 
-<?php
 $title = get_field( 'title' );
-
 $gallery = get_field( 'logos' );
-;
+
 ?>
+
 <section class="block-logo-sliders">
 	<div class="block-logo-sliders__inner inner">
 		<div class="block-logo-sliders__content">
@@ -29,11 +28,11 @@ $gallery = get_field( 'logos' );
 
 						<?php if ( $logo_link = get_sub_field( 'link' ) ) : ?>
 
-							<a class="splide__slide" href="<?php echo $logo_link['url']; ?>"
+							<a class="splide__slide" aria-label="logo <?php echo $logo_link['url']; ?>" href="<?php echo $logo_link['url']; ?>"
 								target="<?php echo $logo_link['target']; ?>">
 								<?php if ( $logo = get_sub_field( 'logo' ) ) : ?>
 									<?php echo wp_get_attachment_image( $logo, [ 0, 40 ], false, [
-
+										'alt'   => "Logo $logo",
 									] ) ?>
 								<?php endif; ?>
 							</a>

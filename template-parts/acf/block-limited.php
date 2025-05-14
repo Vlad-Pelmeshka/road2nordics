@@ -4,11 +4,10 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Limited'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Limited');
+}
 
-<?php
 $title = get_field('title');
 $text = get_field('text');
 $image = get_field('image');;
@@ -16,12 +15,16 @@ $normal_price = get_field('normal_price');
 $save_price = get_field('save');
 $dis_p_t = get_field('discounted_price_title');
 $dis_p = get_field('discounted_price');
-?>
-<section class="block-limited">
 
+?>
+
+<section class="block-limited">
     <div class="block-limited__inner">
         <?php if ($image = get_field('image')): ?>
-            <img class="img-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+            <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
+                'class'   => "img-cover",
+                'alt'     => $image['alt'] ?: ('Image limited' . $image['ID']),
+            ] ) ?>
         <?php endif; ?>
 
         <div class="block-limited__content">

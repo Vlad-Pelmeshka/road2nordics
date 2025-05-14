@@ -4,28 +4,29 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Thank You'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Thank You');
+}
 
-<?php
-// fields
+$img_u      = get_field('image');
+$img_icon   = get_field('icon');
+$section_id = get_field('section_id') ?: 'thank-you_section';
 
-$section_id = get_field('section_id');
-$image_url = get_template_directory_uri() . '/assets/images/home/Stars.png'; // Adjust the path and filename as per your directory structure
-$img_u = get_field('image');
-$img_icon = get_field('icon');
 ?>
 
-<section class="block-thank-you"
-         id="<?php if ($section_id = get_field('section_id')): ?><?php echo $section_id; ?><?php endif; ?>">
+<section class="block-thank-you" id="<?php echo $section_id; ?>">
     <?php if ($img_u): ?>
-        <img class="img-cover" src="<?php echo $img_u['url']; ?>" alt="<?php echo $img_u['alt']; ?>">
+        <?php  echo wp_get_attachment_image( $img_u['ID'], 'full', false, [ 
+            'alt'     => $img_u['alt'] ?: 'Thank You Image Cover',
+            'class'   => 'img-cover'
+        ] )  ?>
     <?php endif; ?>
     <div class="block-thank-you__inner">
         <div class="block-thank-you__content">
             <?php if ($img_icon): ?>
-                <img src="<?php echo $img_icon['url']; ?>" alt="<?php echo $img_icon['alt']; ?>">
+                <?php echo wp_get_attachment_image( $img_icon['ID'], 'full', false, [ 
+                    'alt'     => $img_icon['alt'] ?: 'Thank You Image',
+                ] ) ?>
             <?php endif; ?>
             <?php if ($title = get_field('title')): ?>
                 <h2 class="block-thank-you__title"><?php echo $title; ?></h2>

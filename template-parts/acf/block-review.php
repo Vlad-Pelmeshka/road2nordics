@@ -4,18 +4,16 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Review'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Review');
+}
 
-<?php
-// fields
+$section_id = get_field('section_id') ?: 'review_section';
+$image_url  = get_template_directory_uri() . '/assets/images/home/Stars.png'; // Adjust the path and filename as per your directory structure
 
-$section_id = get_field('section_id');
-$image_url = get_template_directory_uri() . '/assets/images/home/Stars.png'; // Adjust the path and filename as per your directory structure
 ?>
 
-<section class="block-review grid-animate" id="<?php if ($section_id = get_field('section_id')):?><?php echo $section_id; ?><?php endif; ?>">
+<section class="block-review grid-animate" id="<?php echo $section_id; ?>">
     <div class="block-review__inner inner grid-animate-inner">
         <?php if ($title = get_field('title')): ?>
             <h2 class="block-review__title  grid-animate-title"><?php echo $title; ?></h2>
@@ -27,8 +25,10 @@ $image_url = get_template_directory_uri() . '/assets/images/home/Stars.png'; // 
                         <div class="block-review__item-container grid-animate-container">
 
                             <?php if ($icon = get_sub_field('photo')): ?>
-                                <img class="block-review__item-icon grid-animate-icon"
-                                     src="<?php echo $icon['url']; ?>" alt="photo">
+                                <?php echo wp_get_attachment_image( $icon['ID'], 'full', false, [ 
+                                    'class'   => "block-review__item-icon grid-animate-icon",
+                                    'alt'     => $icon['alt'] ?: ('Photo ' . $icon['ID']),
+                                ] ) ?>
                             <?php endif; ?>
                             <div class="block-review__item-stars">
                                 <img class="" src="<?php echo $image_url; ?>" alt="stars">

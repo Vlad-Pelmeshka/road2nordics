@@ -59,8 +59,8 @@ $settings = get_settings();
     <ul class="splide__list">
       <?php
       for ( $i = 0; $i < 10; $i++ ) {
-        echo '<li class="splide__slide">';
-        printf( '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPc9/3HfwAI1gOuq1Su+AAAAABJRU5ErkJggg==" data-splide-lazy="https://source.unsplash.com/random/960x540?sig=%s">', $i + 1 );
+        echo '<li alt="splide__slide 1" class="splide__slide">';
+        printf( '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPc9/3HfwAI1gOuq1Su+AAAAABJRU5ErkJggg==" alt="splide__slide" data-splide-lazy="https://source.unsplash.com/random/960x540?sig=%s">', $i + 1 );
         echo '</li>' . PHP_EOL;
       }
       ?>
@@ -77,7 +77,7 @@ $settings = get_settings();
       for ( $i = 0; $i < 10; $i++ ) {
         echo '<li class="splide__slide">';
         printf(
-          '<img data-splide-lazy-srcset="%s, %s">',
+          '<img alt="splide__slide 2" data-splide-lazy-srcset="%s, %s">',
           sprintf( 'https://source.unsplash.com/random/640x360?sig=%s 640w', $i + 1 ),
           sprintf( 'https://source.unsplash.com/random/960x540?sig=%s 960w', $i + 1 )
         );

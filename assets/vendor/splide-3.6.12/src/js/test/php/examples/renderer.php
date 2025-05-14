@@ -46,46 +46,35 @@ $settings = get_settings();
         },
       };
 
-      // var renderer = new SplideRenderer(
-      //   [
-      //     '<img src="../../assets/images/pics/slide01.jpg">',
-      //     '<img src="../../assets/images/pics/slide02.jpg">',
-      //     '<img src="../../assets/images/pics/slide03.jpg">',
-      //     '<img src="../../assets/images/pics/slide04.jpg">',
-      //     '<img src="../../assets/images/pics/slide05.jpg">',
-      //   ],
-      //   options
-      // );
-
       var renderer = new SplideRenderer(
         [
           {
-            html : '<img src="../../assets/images/pics/slide01.jpg">',
+            html : '<img src="../../assets/images/pics/slide01.jpg" alt="slide01>',
             attrs: {
               dataTest: 1,
               class: 'test',
             },
           },
           {
-            html : '<img src="../../assets/images/pics/slide02.jpg">',
+            html : '<img src="../../assets/images/pics/slide02.jpg" alt="slide02>',
             attrs: {
               dataTest: 2,
             },
           },
           {
-            html : '<img src="../../assets/images/pics/slide03.jpg">',
+            html : '<img src="../../assets/images/pics/slide03.jpg" alt="slide03>',
             attrs: {
               dataTest: 3,
             },
           },
           {
-            html : '<img src="../../assets/images/pics/slide04.jpg">',
+            html : '<img src="../../assets/images/pics/slide04.jpg" alt="slide04>',
             attrs: {
               dataTest: 4,
             },
           },
           {
-            html : '<img src="../../assets/images/pics/slide05.jpg">',
+            html : '<img src="../../assets/images/pics/slide05.jpg" alt="slide05">',
             attrs: {
               dataTest: 5,
             },

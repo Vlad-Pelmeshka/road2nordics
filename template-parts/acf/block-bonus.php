@@ -4,18 +4,17 @@
  * @var array $block
  */
 
-if (is_admin()):?>
-    <?php echo __('Block: Bonus'); ?>
-<?php endif; ?>
+if (is_admin()){
+    echo __('Block: Bonus');
+}
 
-<?php
-$title = get_field('title');
-$text = get_field('text');
+$title      = get_field('title');
+$text       = get_field('text');
+$section_id = get_field('section_id') ?: 'bonus_section';
 
 ?>
-<section id="<?php if ($section_id = get_field('section_id')): ?><?php echo $section_id; ?><?php endif; ?>"
-         class="block-bonus">
 
+<section id="<?php echo $section_id; ?>" class="block-bonus">
     <div class="block-bonus__content">
         <?php if ($title): ?>
             <h2 class="block-bonus__title"><?php echo $title; ?></h2>
@@ -24,5 +23,4 @@ $text = get_field('text');
             <div class="block-bonus__text"><?php echo $text; ?></div>
         <?php endif; ?>
     </div>
-
 </section>
