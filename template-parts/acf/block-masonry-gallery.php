@@ -25,6 +25,7 @@ $section_id = get_field('section_id') ?: 'masonry_gallery';
                 <div class="grid-item">
                     <a href="<?php echo esc_url($image['url']); ?>"
                        class="glightbox"
+                       aria-label="Gallery image <?php echo esc_attr($image['alt']); ?>"
                        data-gallery="acf-gallery">
                         <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                     </a>

@@ -75,7 +75,7 @@
 				<?php
 				if ( is_page( array( 139, 177 ) ) ) : ?>
 					<div id="currency-switcher">
-						<select id="currency-select">
+						<select id="currency-select" aria-labelledby="Currency select">
 							<option value="USD">USD ($)</option>
 							<option value="EUR">EUR (€)</option>
 						</select>
