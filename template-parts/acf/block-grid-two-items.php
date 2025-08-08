@@ -34,7 +34,7 @@ $text  = get_field( 'text' );
 						<div class="block-grid-two-items__item-image">
 							<?php echo wp_get_attachment_image( $img_item, [ 590, 0 ], false, [ 
 								'class' => 'img-cover',
-								'alt'   => "Image $image",
+								'alt'   => "Image $img_item",
 							] ) ?>
 						</div>
 					<?php endif; ?>
