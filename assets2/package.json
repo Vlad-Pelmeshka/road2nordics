@@ -1,0 +1,40 @@
+{
+  "name": "Dmytro",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "type": "module",
+  "browserslist": [
+    "last 1 version",
+    "not IE 11",
+    "> 10% in US",
+    "not firefox 85"
+  ],
+  "modern": [
+    "last 1 chrome version"
+  ],
+  "author": "Dmytro",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build --production"
+  },
+  "contributors": [],
+  "dependencies": {
+    "browser-sync": "^3.0.4",
+    "cssnano": "^7.0.6",
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss-sort-media-queries": "^5.2.0",
+    "sass": "^1.89.0"
+  }
+}

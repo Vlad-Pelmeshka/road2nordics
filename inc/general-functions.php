@@ -29,6 +29,14 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'capability' => 'manage_options',
 		'redirect'   => true,
 	] );
+
+    acf_add_options_page([
+        'page_title' => 'Blog Settings',
+        'menu_title' => 'Blog',
+        'menu_slug'  => 'blog_settings',
+        'capability' => 'manage_options',
+        'redirect'   => false,
+    ]);
 }
 
 /* Register Custom Query */
