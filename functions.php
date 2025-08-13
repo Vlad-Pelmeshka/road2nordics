@@ -98,6 +98,7 @@ function get_all_tags_list() {
 
 
 function get_first_blog_item(){
+    return 0;
     $blog_info = get_field('blog_info', 'options');
     $top_post = $blog_info['top_post'];
 

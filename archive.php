@@ -59,6 +59,8 @@ $total_posts = wp_count_posts()->publish;
             </div>
 
             <!-- Filter -->
+
+            <?php /*
             <div class="blog-filter">
                 <div class="blog-filter-categories">
                     <div class="blog-filter-categories-list">
@@ -81,6 +83,8 @@ $total_posts = wp_count_posts()->publish;
                     </div>
                 </div> 
             </div>
+
+            */ ?>
 
             <?php if( have_posts() ): ?>
 
