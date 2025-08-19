@@ -18,32 +18,66 @@ $image_url  = get_template_directory_uri() . '/assets/images/home/Stars.png'; //
         <?php if ($title = get_field('title')): ?>
             <h2 class="block-review__title  grid-animate-title"><?php echo $title; ?></h2>
         <?php endif; ?>
-        <?php if (get_field('items')): ?>
-            <div class="block-review__items grid-animate-items">
-                <?php while (have_rows('items')) : the_row('items'); ?>
-                    <div class="block-review__item grid-animate-item">
-                        <div class="block-review__item-container grid-animate-container">
+        
+        <?php if ($items = get_field('items')): ?>
+            <?php if(count($items) > 1): ?>
+                <div class="block-review__items grid-animate-items">
+                    <div class="swiper-wrapper">
+                        <?php while (have_rows('items')) : the_row('items'); ?>
+                            <div class="block-review__item grid-animate-item swiper-slide">
+                                <div class="block-review__item-container grid-animate-container">
 
-                            <?php if ($icon = get_sub_field('photo')): ?>
-                                <?php echo wp_get_attachment_image( $icon['ID'], 'full', false, [ 
-                                    'class'   => "block-review__item-icon grid-animate-icon",
-                                    'alt'     => $icon['alt'] ?: ('Photo ' . $icon['ID']),
-                                ] ) ?>
-                            <?php endif; ?>
-                            <div class="block-review__item-stars">
-                                <img class="" src="<?php echo $image_url; ?>" alt="stars">
+                                    <?php if ($icon = get_sub_field('photo')): ?>
+                                        <?php echo wp_get_attachment_image( $icon['ID'], 'full', false, [ 
+                                            'class'   => "block-review__item-icon grid-animate-icon",
+                                            'alt'     => $icon['alt'] ?: ('Photo ' . $icon['ID']),
+                                        ] ) ?>
+                                    <?php endif; ?>
+                                    <div class="block-review__item-stars">
+                                        <img class="" src="<?php echo $image_url; ?>" alt="stars">
+                                    </div>
+
+                                    <?php if ($text = get_sub_field('text')): ?>
+                                        <div class="block-review__item-text text grid-animate-text"><?php echo $text; ?></div>
+                                    <?php endif; ?>
+                                    <?php if ($name = get_sub_field('name')): ?>
+                                        <div class="block-review__item-text name"><?php echo $name; ?></div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
-
-                            <?php if ($text = get_sub_field('text')): ?>
-                                <div class="block-review__item-text text grid-animate-text"><?php echo $text; ?></div>
-                            <?php endif; ?>
-                            <?php if ($name = get_sub_field('name')): ?>
-                                <div class="block-review__item-text name"><?php echo $name; ?></div>
-                            <?php endif; ?>
-                        </div>
+                        <?php endwhile; ?>
                     </div>
-                <?php endwhile; ?>
-            </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            <?php else: ?>
+                <div class="block-review__items grid-animate-items">
+                    <?php while (have_rows('items')) : the_row('items'); ?>
+                        <div class="block-review__item grid-animate-item">
+                            <div class="block-review__item-container grid-animate-container">
+
+                                <?php if ($icon = get_sub_field('photo')): ?>
+                                    <?php echo wp_get_attachment_image( $icon['ID'], 'full', false, [ 
+                                        'class'   => "block-review__item-icon grid-animate-icon",
+                                        'alt'     => $icon['alt'] ?: ('Photo ' . $icon['ID']),
+                                    ] ) ?>
+                                <?php endif; ?>
+                                <div class="block-review__item-stars">
+                                    <img class="" src="<?php echo $image_url; ?>" alt="stars">
+                                </div>
+
+                                <?php if ($text = get_sub_field('text')): ?>
+                                    <div class="block-review__item-text text grid-animate-text"><?php echo $text; ?></div>
+                                <?php endif; ?>
+                                <?php if ($name = get_sub_field('name')): ?>
+                                    <div class="block-review__item-text name"><?php echo $name; ?></div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
 </section>

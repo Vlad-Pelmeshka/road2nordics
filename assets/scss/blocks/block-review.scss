@@ -1,9 +1,11 @@
 .block-review {
+  object-fit: cover;
   position: relative;
   display: flex;
   justify-content: center;
   padding: 40px 0;
   width: 100%;
+  user-select: none;
 
   &__inner {
     max-width: 940px;
@@ -29,6 +31,7 @@
     grid-template-columns: 1fr;
     margin-top: 40px;
     grid-gap: 20px;
+    overflow: hidden;
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }
