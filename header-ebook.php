@@ -2,6 +2,8 @@
 /**
  * The theme header
  */
+
+$currency_switcher = get_field('currency-switcher');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +75,7 @@
 					</div>
 				</div>
 				<?php
-				if ( is_page( array( 139, 177 ) ) ) : ?>
+				if ( $currency_switcher ) : ?>
 					<div id="currency-switcher">
 						<select id="currency-select" aria-labelledby="Currency select">
 							<option value="USD">USD ($)</option>

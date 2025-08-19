@@ -28,6 +28,7 @@
     object-fit: cover;
     border-radius: inherit;
   }
+  
 
   &:before {
     background-color: #000;
@@ -68,7 +69,19 @@
 
   &__pse {
 
-
+    img{
+      width: 100%;
+      min-height: 100vh;
+      bottom: 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: inherit;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      left: 0;
+    }
   }
 
   &__content {

@@ -12,15 +12,31 @@ $title      = get_field('title');
 $subtitle   = get_field('subtitle');
 $text       = get_field('text');
 $cta        = get_field('button');
+$bg_type    = get_field('bg_type');
 $video_url  = get_field('video');
+$bg_image   = get_field('bg_image');
 
 ?>
 <section class="banner-hero-ebook">
-    <?php if(!empty($video_url)): ?>
-        <div class="banner-hero-ebook__pse">
-            <video autoplay muted loop playsinline preload="metadata" src="<?php echo $video_url['url']; ?>"></video>
-        </div>
-    <?php endif; ?>
+    <?php switch($bg_type): 
+        case 'video': ?>
+            <?php if(!empty($video_url)): ?>
+                <div class="banner-hero-ebook__pse">
+                    <video autoplay muted loop playsinline preload="metadata" src="<?php echo $video_url['url']; ?>"></video>
+                </div>
+            <?php endif; ?>
+            <?php break; ?>
+        <?php case 'image': ?>
+        <?php default: ?>
+            <?php if(!empty($bg_image)): ?>
+                <div class="banner-hero-ebook__pse">
+                    <?php echo wp_get_attachment_image( $bg_image['ID'], 'full', false, [ 
+                        'alt'     => 'Banner hero ebook BG' . $bg_image['ID'],
+                    ] ) ?>
+                </div>
+            <?php endif; ?>
+            <?php break; ?>
+    <?php endswitch; ?>
     <div class="banner-hero-ebook__inner inner">
         <div class="banner-hero-ebook__content">
             <?php if ($subtitle): ?>
