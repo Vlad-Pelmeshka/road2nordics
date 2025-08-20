@@ -149,9 +149,10 @@
 
 
     img {
-      width: 200px;
+      width: 200px !important;
+      height: auto;
       @include media('<580px') {
-        width: 150px;
+        width: 150px !important;
       }
     }
 
