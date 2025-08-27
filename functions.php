@@ -180,7 +180,7 @@ function add_ids_to_case_study_headings( $content ) {
 function get_three_random_posts($post__not_in = 0) {
     $args = [
         'post_type'      => 'post',
-        'posts_per_page' => 3,
+        'posts_per_page' => 1,
         'orderby'        => 'rand',
         'post__not_in'   => [$post__not_in], 
         'post_status'    => 'publish',
