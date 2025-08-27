@@ -96,13 +96,13 @@ function enqueue_static_content() {
 
 	// Swiper
 	wp_enqueue_style(
-		'post-single-style',
+		'post-swiper-style',
 		get_stylesheet_directory_uri() . '/assets2/swiper-bundle.min.css',
 		[],
 		filemtime(get_stylesheet_directory() . '/assets2/swiper-bundle.min.css')
 	);
 	wp_enqueue_script(
-		'post-js',
+		'post-swiper-js',
 		get_stylesheet_directory_uri() . '/assets2/js/swiper-bundle.min.js',
 		[],
 		filemtime(get_stylesheet_directory() . '/assets2/js/swiper-bundle.min.js'),

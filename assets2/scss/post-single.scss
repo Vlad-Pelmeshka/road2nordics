@@ -26,7 +26,6 @@
         flex-direction: column;
         display: flex;
         gap: 24px;
-        margin-bottom: 16px;
 
         &-content{
             display: flex;
@@ -228,7 +227,7 @@
         }
 
         h2{
-            margin-top: 24px;
+            margin-top: 48px;
             margin-bottom: 16px;
             font-weight: 600;
             font-size: 24px;
@@ -349,10 +348,6 @@
         section.cta{
             padding: 0 !important;
             margin-top: 64px;
-        }
-
-        *:first-child{
-            margin-top: 0 !important;
         }
 
         .wp-block-embed{
@@ -752,10 +747,11 @@
             }
         }
 
-        &-article{
+        &-article, &-header-description{
 
             h2{
                 font-size: 22px;
+                margin-top: 40px;
             }
 
             h3{
@@ -823,9 +819,10 @@
             margin-top: 40px;
         }
 
-        &-article{
+        &-article, &-header-description{
 
             h2{
+                margin-top: 32px;
                 font-size: 20px;
             }
 
@@ -852,11 +849,6 @@
                 margin-block: 40px;
             }
         }
-
-        &-content{
-            padding: 32px 16px;
-        }
-
 
         &-contact{
             padding: 32px 16px;

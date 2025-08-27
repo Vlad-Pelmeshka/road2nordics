@@ -12,6 +12,7 @@ $title 		= get_the_title();
 $tags = wp_get_post_tags($post_ID);
 
 $header_description = get_field('header_content');
+$show_h2_list       = get_field('show_h2_list');
 
 $single_info    = get_field('single_info', 'options');
 $title_nav      = $single_info['title_nav'];
@@ -70,21 +71,23 @@ global $nav_content_headings;
             </div>
         <?php endif; ?>
 
-        <div class="post-nav">
-            <div class="post-nav-container">
-                <div class="post-nav-title" for="post-nav-list"><?php echo esc_html( $title_nav ); ?></div>
+        <?php if($show_h2_list): ?>
+            <div class="post-nav">
+                <div class="post-nav-container">
+                    <div class="post-nav-title" for="post-nav-list"><?php echo esc_html( $title_nav ); ?></div>
 
-                <ul class="post-nav-list wp-block-list">
-                    <?php foreach ( $nav_content_headings as $heading ) : ?>
-                        <li class="post-nav-item">
-                            <a class="post-nav-link" href="#<?php echo esc_attr( $heading['id'] ); ?>">
-                                <?php echo esc_html( $heading['text'] ); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+                    <ul class="post-nav-list wp-block-list">
+                        <?php foreach ( $nav_content_headings as $heading ) : ?>
+                            <li class="post-nav-item">
+                                <a class="post-nav-link" href="#<?php echo esc_attr( $heading['id'] ); ?>">
+                                    <?php echo esc_html( $heading['text'] ); ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
     
     <div class="post-content">

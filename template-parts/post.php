@@ -4,8 +4,7 @@ $post_id 	= get_the_ID();
 $title 		= get_the_title();
 $link 		= get_permalink();
 $image_id 	= get_post_thumbnail_id() ?: get_field('main_bg','options');
-$excerpt 	= get_the_excerpt();
-
+$excerpt 	= get_field('header_content') ?: get_the_excerpt();
 
 $category_list = wp_get_post_categories($post_id);
 if(!empty($category_list[0])){
@@ -28,8 +27,8 @@ if(!empty($category_list[0])){
 				<div class="blog-item__category"><?php echo $cat_info; ?></div>
 			<?php endif; */ ?>
 
-			<div class="blog-item__title"><?php echo esc_html($title); ?></div>
-			<div class="blog-item__except"><?php echo esc_html($excerpt); ?></div>
+			<div class="blog-item__title"><?php echo strip_tags($title); ?></div>
+			<div class="blog-item__except"><?php echo strip_tags($excerpt); ?></div>
 
 		</div>
 		<div class="blog-item__bottom">
