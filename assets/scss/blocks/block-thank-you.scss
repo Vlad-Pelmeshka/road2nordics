@@ -1,11 +1,17 @@
-.block-thank-you {
+main:has(.block-thank-you){
   position: relative;
+}
+
+.block-thank-you {
   display: flex;
   justify-content: center;
-  padding: 300px 0;
+  padding: 160px 0 80px;
   width: 100%;
   @media (max-width: 1200px) {
-    padding: 150px 0;
+    padding: 160px 0 80px;
+  }
+  @media (max-width: 767px) {
+    padding: 104px 0 24px;
   }
 
   &__inner {
@@ -17,9 +23,15 @@
 
   }
 
+  &__content img{
+    height: 80px;
+    width: 80px;
+    margin-bottom: 32px;
+  }
+
   &__title {
     font-family: $font-primary;
-    font-size: 52px;
+    font-size: 34px;
     font-weight: 800;
     text-transform: capitalize;
     line-height: 1.2em;
@@ -27,16 +39,12 @@
     color: #1f283c;
     width: 100%;
     margin-bottom: 20px;
-    @media (max-width: 1366px) {
-      font-size: 46px;
-    }
 
     @media (max-width: 1200px) {
-      font-size: 41px;
+      font-size: 32px;
     }
     @media (max-width: 767px) {
-      font-size: 32px;
-
+      font-size: 26px;
     }
   }
 
@@ -46,6 +54,10 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 40px;
+
+    @media (max-width: 767px) {
+      padding: 24px;
+    }
   }
 
   p {
@@ -60,7 +72,33 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 32px;
+
+    a{
+      background: transparent;
+      color: #FF7010;
+      border-width: 0;
+
+      svg{
+        fill: transparent !important;
+
+        path{
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover{
+        color: #1f283c;
+
+        svg path{
+          stroke: #1f283c;
+        }
+      }
+
+      &::before{
+        content: none;
+      }
+    }
   }
 
   &__bottom {
@@ -72,6 +110,7 @@
       width: 100%;
       box-sizing: border-box;
       padding: 35px 130px 35px 130px;
+      line-height: 150%;
       @media (max-width: 1200px) {
         padding: 35px;
       }

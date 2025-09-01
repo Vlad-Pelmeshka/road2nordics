@@ -40,10 +40,11 @@ $section_id = get_field('section_id') ?: 'thank-you_section';
                 <?php if ($cta = get_field('button')): ?>
                     <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>"
                        class="block-thank-you__cta btn-primary">
-                        <svg class="svg-inline--fas-fa-arrow-left premium-drawable-icon premium-svg-nodraw"
-                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 20.9706L3.51472 12.4853L12 4.00002" stroke="#FF7010" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M3.51472 12.4853L20.4853 12.4853" stroke="#FF7010" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
+
                         <?php echo $cta['title']; ?>
                     </a>
                 <?php endif; ?>
