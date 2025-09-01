@@ -73,6 +73,17 @@ $currency_switcher = get_field('currency-switcher');
 						) );
 						?>
 					</div>
+					<?php if ( $logo = get_field( 'logo', 'option' ) ) : ?>
+						<div class="header__logo-container opacity-0">
+							<a class="header__logo">
+								<?php echo wp_get_attachment_image( $logo, [ 200, 0 ], false, [ 
+									'class'   => 'header__logo-img',
+									'alt'     => esc_attr( get_bloginfo( 'title' ) ),
+									'loading' => 'eager'
+								] ) ?>
+							</a>
+						</div>
+					<?php endif; ?>
 				</div>
 				<?php
 				if ( $currency_switcher ) : ?>

@@ -5,23 +5,70 @@
 .header__menus.mobi{
 
     .header__main-nav-menu{
-        gap: 8px;
+        gap: 32px;
+        padding: 0 16px;
     }
 
     .menu-item {
         display: flex;
         margin-right: auto;
         flex-direction: column;
+        border-bottom: 1px solid #E4E6EC;
 
         a{
             width: fit-content;
+            padding: 0 0 10px;
+            line-height: 150%;
+        }
+
+        &-has-children{
+            & > a{
+                &::after{
+                    top: 0;
+                    right: -24px;
+                }
+            }
+        }
+
+        &.active{
+            & > a{
+                color: #1F283C;
+            }
         }
     }
 
-    .sub-menu.active{
-        margin-right: auto;
+    .sub-menu{
+        width: 100%;
+
+        &.active{
+            margin-right: auto;
+            border-top: 3px solid #1F283C;
+        }
+
+        li{
+            border-bottom-width: 0;
+            padding-bottom: 8px;
+
+            a{
+                text-align: left;
+                padding: 10px 0;
+            }
+        }
     }
+
 } 
+
+.header__logo{
+    &-container{
+        &.opacity-0{
+            opacity: 0;
+
+            @media (max-width: 1279px) {
+                display: none;
+            }
+        }
+    }
+}
 
 
 .swiper{
