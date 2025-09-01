@@ -9,7 +9,7 @@ define('TEMPLATE_DIRECTORY', get_template_directory());
 define('TEMPLATE_DIRECTORY_URI', get_template_directory_uri());
 define('STYLESHEET_URI', get_stylesheet_uri());
 define('STYLESHEET_DIRECTORY', get_stylesheet_directory());
-define('APP_VERSION', '1.9.1');
+define('APP_VERSION', '1.9.2');
 
 /* Autoload theme files */
 $folders = array(
