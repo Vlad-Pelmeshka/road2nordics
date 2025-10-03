@@ -14,11 +14,11 @@ $tags = wp_get_post_tags($post_ID);
 $header_description = get_field('header_content');
 $show_h2_list       = get_field('show_h2_list');
 $contact_block      = get_field('contact_block');
-$contact_block_show = $contact_block['is_show'] ?: false;
+$contact_block_show = !empty($contact_block['is_show'] && $contact_block['is_show']) ? $contact_block['is_show'] : false;
 
 $single_info    = get_field('single_info', 'options');
 $title_nav      = $single_info['title_nav'];
-$bottom_block   = ($contact_block['content_type'] == 'prepared') ? $single_info['bottom_block'] : $contact_block;
+$bottom_block   = ($contact_block_show && $contact_block['content_type'] == 'prepared') ? $single_info['bottom_block'] : $contact_block;
 $copy_link_text = $single_info['copy_link_text'] ?: 'Copy link';
 $share_text     = $single_info['share_text'] ?: 'Share this article';
 $read_next_text = $single_info['read_next_text'] ?: 'Read next';

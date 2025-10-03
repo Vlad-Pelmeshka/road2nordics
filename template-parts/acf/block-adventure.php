@@ -91,8 +91,7 @@ $section_id = get_field('section_id') ?: 'adventure_section';
         <?php if ($image = get_field('image')): ?>
             <?php echo wp_get_attachment_image( $image['ID'], 'full', false, [ 
                 'alt'     => $image['alt'] ?: 'Adventure Image Cover',
-                'loading' => 'eager',
-                'class'   => 'img-cover'
+                'loading' => 'eager'
             ] ) ?>
         <?php endif; ?>
     </div>

@@ -20,14 +20,27 @@
     position: relative;
     width: 100%;
     z-index: 2;
+
+    @media (max-width: 768px) {
+      font-size: 34px;
+    }
   }
-&__content{
-  padding: 185px 0px 185px 0px;
-}
+  &__content{
+    padding: 185px 0px 185px 0px;
+    
+      @media (max-width: 768px) {
+        padding: 81px 0px 81px 0px;
+      }
+  }
   &__btn {
     display: flex;
     padding-top: 25px;
     justify-content: center;
     width: 100%;
+  }
+
+  
+  @media (max-width: 768px) {
+    margin: 32px 0;
   }
 }

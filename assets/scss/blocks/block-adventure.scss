@@ -12,20 +12,27 @@
 
   &__image {
     position: relative;
-    min-height: 85vh;
     width: 50%;
+    height: -webkit-fill-available;
+
+    img{
+      object-fit: cover;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
     @media (max-width: 790px) {
 
       width: 100%;
     }
     @media (max-width: 765px) {
 
-      min-height: 252px;
+      height: 325px;
     }
   }
 
   &__extra_text {
-    font-family: $font-primary;
+    font-family: Archivo,sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -40,31 +47,37 @@
 
   &__content {
     position: relative;
-    padding: 75px 100px 75px 100px;
+    padding: 48px 60px;
     box-sizing: border-box;
     width: 50%;
-    @media (max-width: 960px) {
-      padding: 32px;
+    flex: none;
 
+    @media (max-width: 960px) {
+      padding: 40px 32px;
     }
     @media (max-width: 790px) {
-      padding: 30px 20px 30px 20px;
+      padding: 32px 16px;
       width: 100%;
     }
   }
 
   &__title {
-    font-family: $font-primary;
+    font-family: Archivo,sans-serif;
     font-size: 34px;
     font-weight: 800;
     text-transform: capitalize;
     line-height: 1.2em;
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
     color: #fff;
-    @media (max-width: 768px) {
+    
+    @media (max-width: 960px) {
+      margin-bottom: 30px;
+    }
 
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
       font-size: 26px;
     }
 
@@ -86,7 +99,8 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    padding-bottom: 25px;
+    padding-bottom: 36px;
+    margin-bottom: 36px;
     width: auto;
 
     &:after {
@@ -107,7 +121,7 @@
       width: 100%;
 
       strong{
-        font-family: $font-primary;
+        font-family: Archivo,sans-serif;
         font-weight: 700;
         font-size: 20px;
         line-height: 150%;
@@ -117,10 +131,20 @@
 
       }
     }
+
+    @media (max-width: 960px) {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
   }
 
   ul {
-    padding: 25px 0;
+    padding: 25px 0 25px 25px;
     width: auto;
 
     li {
@@ -134,12 +158,12 @@
   &__price {
     position: relative;
     display: flex;
-    padding: 30px 0;
+    margin: 4px 0 36px;
     justify-content: center;
     width: 100%;
 
     .cur {
-      font-family: $font-primary;
+      font-family: Archivo,sans-serif;
       font-size: 34px;
       font-weight: 800;
       text-transform: capitalize;
@@ -147,12 +171,23 @@
     }
 
     .price {
-      font-family: $font-primary;
-      font-size: 34px;
+      font-family: Archivo,sans-serif;
+      font-size: 24px;
       font-weight: 800;
       text-transform: capitalize;
       line-height: 1.2em;
 
+      @media (max-width: 960px) {
+        font-size: 22px;
+      }
+    }
+    
+    @media (max-width: 960px) {
+      margin: 2px 0 30px;
+    }
+    
+    @media (max-width: 768px) {
+      margin: 0 0 24px;
     }
   }
 
@@ -172,21 +207,25 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 36px;
     width: 100%;
 
     span {
-      font-family: $font-primary;
+      font-family: Archivo,sans-serif;
       font-size: 24px;
       font-weight: 700;
       position: relative;
       text-align: center;
       color: #767c8a;
+
+      @media (max-width: 960px) {
+        font-size: 22px;
+      }
 
     }
 
     del {
-      font-family: $font-primary;
+      font-family: Archivo,sans-serif;
       font-size: 24px;
       font-weight: 700;
       position: relative;
@@ -195,16 +234,32 @@
 
     }
 
+    @media (max-width: 960px) {
+      margin-top: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      margin-top: 24px;
+    }
   }
 
   &__price-save {
-    margin-top: 20px;
-    font-family: $font-primary;
-    font-size: 26px;
+    margin-top: 4px;
+    font-family: Archivo,sans-serif;
+    font-size: 24px;
     font-weight: 700;
     color: #fff;
     line-height: 1.5em;
     text-align: center;
     width: 100%;
+    
+    @media (max-width: 960px) {
+      margin-top: 2px;
+      font-size: 22px;
+    }
+    
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
   }
 }
