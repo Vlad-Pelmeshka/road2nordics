@@ -31,7 +31,7 @@ $gallery = get_field( 'logos' );
 							<a class="splide__slide" aria-label="logo <?php echo $logo_link['url']; ?>" href="<?php echo $logo_link['url']; ?>"
 								target="<?php echo $logo_link['target']; ?>">
 								<?php if ( $logo = get_sub_field( 'logo' ) ) : ?>
-									<?php echo wp_get_attachment_image( $logo, [ 0, 40 ], false, [
+									<?php echo wp_get_attachment_image( $logo, 'full', false, [
 										'alt'   => "Logo $logo",
 									] ) ?>
 								<?php endif; ?>
